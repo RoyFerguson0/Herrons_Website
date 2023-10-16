@@ -1,0 +1,87 @@
+﻿body{
+    width:100%;
+}
+#form1{
+    width:100%;
+}
+#section1 {
+    padding-top: 50px;
+    color: #fff;
+    background-color: #1E88E5;
+}
+
+#section2 {
+    padding-top: 50px;
+    color: #fff;
+    background-color: #673ab7;
+}
+
+#section3 {
+    padding-top: 50px;
+    color: #fff;
+    background-color: #ff9800;
+}
+
+#section41 {
+    padding-top: 50px;
+    color: #fff;
+    background-color: #00bcd4;
+}
+
+#section42 {
+    padding-top: 50px;
+    color: #fff;
+    background-color: #009688;
+}
+
+.navbar-fixed-top{
+    position:revert;
+}
+#myNarBar{
+    
+    border:0px;
+    padding:0px;
+    margin:0px;
+    height:55px;
+}
+
+#MasterContent{
+    width:90%;
+    margin:auto;
+}
+
+
+
+
+
+
+
+.nav navbar-nav {
+    color: #FFFFFF;
+    height: 55px;
+}
+
+
+.collapse navbar-collaps{
+    height:55px;
+}
+
+#hylHome, hylProducts, hyladmin {
+    height: 55px;
+}
+
+#HerronsLogo {
+    width: 30%;
+    margin: auto;
+}
+
+#herronsImg{
+    width:100%;
+}
+
+#MasterContent{
+    float:left;
+    width:100%;
+}
+
+

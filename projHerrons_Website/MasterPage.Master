@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="projHerrons_Website.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    
+    
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script src="Javascript/MasterPage.js"></script>
+    <link href="Styles/MasterPage.css" rel="stylesheet" />
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onload="detectViewPort();" onresize="detectViewPort();">
+    <form id="form1" runat="server">
+        <div id="HerronsLogo">
+            <img id="herronsImg" src="Images/herrons-logo.jpg" />
+        </div>
+        <div id="myNavBar">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>                        
+                  </button>
+                    <asp:HyperLink class="navbar-brand hylHome" runat="server" ID="NavOptions">Navigation</asp:HyperLink>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav">
+                    <li><asp:HyperLink class="hylHome" href="#section3" runat="server">Home</asp:HyperLink></li>
+                     <li><asp:HyperLink ID="hylProducts" href="#section3" runat="server">Products</asp:HyperLink></li>
+                     <li><asp:HyperLink ID="hyladmin" href="#section3" runat="server">Admin</asp:HyperLink></li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+
+                      <li><asp:HyperLink ID="hylBasket" href="#section3" runat="server"><span class="fa fa-shopping-cart"></span> Basket</asp:HyperLink></li>
+                      <li><asp:HyperLink ID="hylSignUp" href="#section3" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</asp:HyperLink></li>
+                      <li><asp:HyperLink ID="hylLogin" href="#section3" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</asp:HyperLink></li>
+                    
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+            </div>
+        <div id="MasterContent">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+
+
+            <span id="vWidth">????</span>
+        </div>
+    </form>
+</body>
+</html>
