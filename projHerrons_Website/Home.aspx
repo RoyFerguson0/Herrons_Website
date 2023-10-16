@@ -1,18 +1,20 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="projHerrons_Website.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/Home.css" rel="stylesheet" />
-
+    <script src="Javascript/Home.js"></script>
     <%--Slide Show--%>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div id="HomeContent">
     <div id="firstSlideShow">
-        <div class="container">
+        
+       
   <h2>Carousel Example</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -34,7 +36,7 @@
       </div>
 
       <div class="item">
-        <img src="Images/foodOne.png" alt="Chicago" style="width:100%;">
+        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
         <div class="carousel-caption">
           <h3>Chicago</h3>
           <p>Thank you, Chicago!</p>
@@ -42,7 +44,7 @@
       </div>
     
       <div class="item">
-        <img src="Images/foodOne.png" alt="New York" style="width:100%;">
+        <img src="ny.jpg" alt="New York" style="width:100%;">
         <div class="carousel-caption">
           <h3>New York</h3>
           <p>We love the Big Apple!</p>
@@ -61,10 +63,14 @@
       <span class="sr-only">Next</span>
     </a>
   </div>
-            </div>
+
+
+
     </div>
     <div id="secondInfo">
 
     </div>
     </div>
+
+    
 </asp:Content>
