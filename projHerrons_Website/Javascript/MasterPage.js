@@ -5,10 +5,7 @@
 
     document.getElementById("vWidth").innerHTML
         = wd + "px";
-    //if (wd >= 900) {
-    //    let Navigation = document.getElementById('NavOptions');
-    //    Navigation.parentNode.removeChild(Navigation);
-    //}
+    
 
 
 }
@@ -23,16 +20,14 @@ function myFunction() {
     }
 }
 
-$(window).resize(function () {
+//$(window).resize(function () {
 
-    if ($(window).width() <= 600) {
-        $('.navbar-fixed-top').removeClass('navbar-fixed-top');
-        /*document.getElementById('NavOptions').object.style.visibility = "visible";*/
+//    if ($(window).width() <= 600) {
+//        $('.navbar-fixed-top').removeClass('navbar-fixed-top');
         
-    } else {
-        $('.navbar').addClass('navbar-fixed-top');
-        //let Navigation = document.getElementById('NavOptions');
-        //Navigation.remove();
-        //Navigation.parentNode.removeChild(Navigation);
-    }
-});
+        
+//    } else {
+//        $('.navbar').addClass('navbar-fixed-top');
+        
+//    }
+//});

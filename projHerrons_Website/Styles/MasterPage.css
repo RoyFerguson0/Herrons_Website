@@ -46,28 +46,23 @@
 
 }
 
-#MasterContent{
-    width:90%;
-    margin:auto;
+.myNarBar {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    height: 55px;
 }
-
-
-
-
-
-
-
 .nav navbar-nav {
     color: #FFFFFF;
     height: 55px;
 }
 
 
-.collapse navbar-collaps{
-    height:55px;
+.collapse navbar-collaps {
+    height: 55px;
 }
 
-#hylHome, hylProducts, hyladmin {
+#hylHome hylProducts hylAdmin hylBasket hylBasket hylSignUp hylLogin {
     height: 55px;
 }
 
@@ -76,16 +71,71 @@
     margin: auto;
 }
 
-#herronsImg{
-    width:100%;
+#herronsImg {
+    width: 100%;
 }
 
-#MasterContent{
-    float:left;
-    width:100%;
+#MasterContent {
+    float: left;
+    width: 100%;
     border: 0px;
     margin: 0px;
-    padding:0px;
+    padding: 0px;
 }
 
 
+/*Footer*/
+
+#Masterfooter {
+    width: 100%;
+    margin: auto;
+    float: left;
+    text-align: center;
+}
+#FooterImage{
+    width:100%;
+    margin:auto;
+    float:left;
+}
+
+#imgHerronsLogo {
+    width: 20%;
+    margin: auto;
+}
+#SocialIcons{
+    float:left;
+    width:100%;
+    
+}
+
+#SocialIcons .fa {
+    font-size: 14px;
+    padding: 13px;
+    text-align: center;
+    text-decoration: none;
+}
+#floatLeft{
+    float:left;
+    width:100%;
+}
+
+.TBBorder {
+    margin-top: 5px;
+    width: 70%;
+    margin: auto;
+    border: 1px solid #000000;
+    text-align: center;
+}
+
+.TBTitle {
+    width: 28%;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    font-style: italic;
+}
+
+.TBDetails {
+    width: 28%;
+    text-align: center;
+}

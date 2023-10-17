@@ -1,11 +1,7 @@
 ﻿body {
 }
 
-/*Active Nav*/
-.nav #hylLogin {
+#hylProducts {
     background-color: #ddd;
     color: Black;
-}
-h1 {
-    color:red;
 }

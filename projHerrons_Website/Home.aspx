@@ -11,66 +11,115 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div id="HomeContent">
+<div id="HomeContent">
     <div id="firstSlideShow">
-        
-       
-  <h2>Carousel Example</h2>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
 
-      <div class="item active">
-        <img src="Images/foodOne.png" alt="Los Angeles" style="width:100%;">
-        <div class="carousel-caption">
-          <h3>Los Angeles</h3>
-          <p>LA is always so much fun!</p>
-        </div>
-      </div>
+          <div class="item active">
+            <img class="foodImages" src="Images/foodOne.jpg" alt="Los Angeles">
+            <div class="carousel-caption">
+              <h3>Los Angeles</h3>
+              <p>LA is always so much fun!</p>
+            </div>
+          </div>
 
-      <div class="item">
-        <img src="chicago.jpg" alt="Chicago" style="width:100%;">
-        <div class="carousel-caption">
-          <h3>Chicago</h3>
-          <p>Thank you, Chicago!</p>
-        </div>
-      </div>
+          <div class="item">
+            <img class="foodImages" src="Images/foodTwo.jpg" alt="Chicago">
+            <div class="carousel-caption">
+              <h3>Chicago</h3>
+              <p>Thank you, Chicago!</p>
+            </div>
+          </div>
     
-      <div class="item">
-        <img src="ny.jpg" alt="New York" style="width:100%;">
-        <div class="carousel-caption">
-          <h3>New York</h3>
-          <p>We love the Big Apple!</p>
-        </div>
-      </div>
+          <div class="item">
+            <img class="foodImages" src="Images/foodThree.jpg" alt="Food">
+            <div class="carousel-caption">
+              <h3>New York</h3>
+              <p>We love the Big Apple!</p>
+            </div>
+          </div>
   
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
-
-
-    </div>
+    
     <div id="secondInfo">
 
+        <h1>Herrons Country Fried Chicken,
+        Northern Ireland's Local Takeaway</h1>
+        <span style="color:red">Herrons CFC has been your preferred local fried chicken take-away since our first store opened
+            in 1977 in Newcastle.
+        </span>
+    </div> 
+</div>
+
+    <%-- The Three Options Border --%>
+    <div id="ThreeOptions">
+        <div class="optionsBorderWhiteSpace">
+            </div>
+        <%-- First Option --%>
+        <div class="optionsBorder">
+            <div>
+                <asp:Image class="OptionsImage" ID="imgProducts" runat="server" ImageUrl="~/Images/shopCounter.jpg" />
+            </div>
+            <div class="centerText">
+                <span class="RedText">1.Products</span><br />
+                To view all are available products.<br />
+                <asp:Button CssClass="RedButton" ID="btnProducts" runat="server" Text="Button" />
+            </div>
+        </div>
+        <div class="optionsBorderWhiteSpace">
+            </div>
+        <%-- Second Option --%>
+        <div class="optionsBorder">
+            <div>
+                <asp:Image class="OptionsImage" ID="imgLogIn" runat="server" ImageUrl="~/Images/login.jpg" BackColor="#CCCCFF" />
+            </div>
+            <div class="centerText">
+                <span class="RedText">2.Log In</span><br />
+                To Log into your account.<br />
+                <asp:Button CssClass="RedButton" ID="Button1" runat="server" Text="Button" />
+            </div>
+        </div>
+        <div class="optionsBorderWhiteSpace">
+            </div>
+        <%-- Third Option --%>
+        <div class="optionsBorder">
+            <div>
+                <asp:Image class="OptionsImage" ID="imgBasket" runat="server" ImageUrl="~/Images/basket.jpg" />
+            </div>
+            <div class="centerText">
+                <span class="RedText">3.Basket</span><br />
+                To view all the items you have added to basket.<br />
+                <asp:Button CssClass="RedButton" ID="Button2" runat="server" Text="Button" />
+            </div>
+        </div>
+
     </div>
-    </div>
+
+
+
 
     
 </asp:Content>

@@ -13,13 +13,16 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <script src="Javascript/MasterPage.js"></script>
-    <link href="Styles/MasterPage.css" rel="stylesheet" />
+    
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <%-- Footer Social Media Icons --%>
+    <link href="Styles/socialMediaIcons.css" rel="stylesheet" />
 
+    <script src="Javascript/MasterPage.js"></script>
+    <link href="Styles/MasterPage.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -42,15 +45,15 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav">
-                    <li><asp:HyperLink class="hylHome" href="#section3" runat="server">Home</asp:HyperLink></li>
-                     <li><asp:HyperLink ID="hylProducts" href="#section3" runat="server">Products</asp:HyperLink></li>
-                     <li><asp:HyperLink ID="hyladmin" href="#section3" runat="server">Admin</asp:HyperLink></li>
+                    <li><asp:HyperLink CssClass="myNavbar" ID="hylHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
+                     <li><asp:HyperLink CssClass="myNavbar" ID="hylProducts" runat="server" NavigateUrl="~/Products.aspx">Products</asp:HyperLink></li>
+                     <li><asp:HyperLink CssClass="myNavbar" ID="hylAdmin" runat="server" NavigateUrl="~/Admin.aspx">Admin</asp:HyperLink></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
 
-                      <li><asp:HyperLink ID="hylBasket" href="#section3" runat="server"><span class="fa fa-shopping-cart"></span> Basket</asp:HyperLink></li>
-                      <li><asp:HyperLink ID="hylSignUp" href="#section3" runat="server"><span class="glyphicon glyphicon-user"></span> Sign Up</asp:HyperLink></li>
-                      <li><asp:HyperLink ID="hylLogin" href="#section3" runat="server"><span class="glyphicon glyphicon-log-in"></span> Login</asp:HyperLink></li>
+                      <li><asp:HyperLink CssClass="myNavbar" ID="hylBasket" runat="server" NavigateUrl="~/Basket.aspx"><span class="fa fa-shopping-cart"></span> Basket</asp:HyperLink></li>
+                      <li><asp:HyperLink CssClass="myNavbar" ID="hylSignUp" runat="server" NavigateUrl="~/SignUp.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</asp:HyperLink></li>
+                      <li><asp:HyperLink CssClass="myNavbar" ID="hylLogin" runat="server" NavigateUrl="~/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</asp:HyperLink></li>
                     
                   </ul>
                 </div>
@@ -58,14 +61,53 @@
             </nav>
 
             </div>
+        
+
         <div id="MasterContent">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+        </div>
 
+
+        <div id="Masterfooter">
+            <%--<%-- Herrons Logo --%>
+            <div id="FooterImage">
+                <asp:Image ID="imgHerronsLogo" runat="server" ImageUrl="~/Images/herrons-logo.jpg" />
+                <br />
+            </div>
+            <%-- Social Media Icons --%>
+            <div id="SocialIcons">
+                <a href="http://facebook.com" class="fa fa-facebook" ></a>
+				<a href="https://www.instagram.com/" class="fa fa-instagram" ></a>
+				<a href="https://twitter.com/" class="fa fa-twitter"></a>
+				<a href="https://www.snapchat.com/l/en-gb/" class="fa fa-snapchat-ghost"></a>
+				<a href="https://www.linkedin.com/home/?originalSubdomain=uk" class="fa fa-linkedin"></a>
+            </div>
+            <div id="floatLeft">
+                <br />
+                <table class="TBBorder">
+                   <tr>
+                       <td class="TBTitle">Phone Number:</td>
+                   </tr>
+                   <tr>
+                       <td class="TBDetails"><a href="tel:07712345123">07712345123</a></td>
+                   </tr>
+                   <tr>
+                       <td class="TBTitle">Email Address:</td>
+                   </tr>
+                       <td class="TBDetails"><a href="mailto: HerronsFriedChicken@gmail.com">HerronsFriedChicken@gmail.com</a></td>
+                   </tr>
+               </table>
+                <br />
+				 Copyright &copy; 2023 Herrons Country Fried Chicken &reg; 
+
+            </div>
+
+        </div>
 
 
             <span id="vWidth">????</span>
-        </div>
+        
     </form>
 </body>
 </html>

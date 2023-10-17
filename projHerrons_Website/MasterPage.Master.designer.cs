@@ -42,6 +42,15 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.HyperLink NavOptions;
 
         /// <summary>
+        /// hylHome control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hylHome;
+
+        /// <summary>
         /// hylProducts control.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,13 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.HyperLink hylProducts;
 
         /// <summary>
-        /// hyladmin control.
+        /// hylAdmin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hyladmin;
+        protected global::System.Web.UI.WebControls.HyperLink hylAdmin;
 
         /// <summary>
         /// hylBasket control.
@@ -94,5 +103,14 @@ namespace projHerrons_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+
+        /// <summary>
+        /// imgHerronsLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgHerronsLogo;
     }
 }
