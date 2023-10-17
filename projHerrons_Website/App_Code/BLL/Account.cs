@@ -21,26 +21,26 @@ namespace projHerrons_Website.App_Code.BLL
         // Update Account Information 
         public void updateAccount()
         {
-            //DataAccess.updateAccount(this.UserID, this.Firstname, this.Lastname, this.Email, this.Password, this.Status);
+            DataAccess.updateAccount(this.UserID, this.Firstname, this.Lastname, this.Email, this.Password, this.Status);
         }
 
         // Delete Account Information
-        //public bool deleteAccount()
-        //{
-        //   // return DataAccess.removeAccount(this.UserID);
-        //}
+        public bool deleteAccount()
+        {
+            return DataAccess.removeAccount(this.UserID);
+        }
 
         // Populates a Account Object
         public void loadStudent(int UserID)
         {
             // Using a Temporary Account Object to populate Data Fields
-            //Account tmpAccountObj = DataAccess.getUserID(UserID);
-            //this.UserID = tmpAccountObj.getUserID();
-            //this.Firstname = tmpAccountObj.getFirstName();
-            //this.Lastname = tmpAccountObj.getLastName();
-            //this.Email = tmpAccountObj.getEmail();
-            //this.Password = tmpAccountObj.getPassword();
-            //this.Status = tmpAccountObj.getStatus();
+            Account tmpAccountObj = DataAccess.getAccount(UserID);
+            this.UserID = tmpAccountObj.getUserID();
+            this.Firstname = tmpAccountObj.getFirstName();
+            this.Lastname = tmpAccountObj.getLastName();
+            this.Email = tmpAccountObj.getEmail();
+            this.Password = tmpAccountObj.getPassword();
+            this.Status = tmpAccountObj.getStatus();
 
         }
 
@@ -133,7 +133,7 @@ namespace projHerrons_Website.App_Code.BLL
         // Create New Account User
         public void createNewAccount()
         {
-            this.UserID = DataAccess.createAccount(this.Firstname, this.Lastname, this.Email, this.Password);
+            this.UserID = DataAccess.createAccount(this.Firstname, this.Lastname, this.Email, this.Password, this.Status);
         }
 
 
