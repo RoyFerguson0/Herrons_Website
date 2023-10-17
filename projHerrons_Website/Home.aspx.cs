@@ -14,5 +14,20 @@ namespace projHerrons_Website
         {
             
         }
+
+        protected void btnProducts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Products.aspx");
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnBasket_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Basket.aspx");
+        }
     }
 }

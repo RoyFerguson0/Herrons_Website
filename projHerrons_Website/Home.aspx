@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/Home.css" rel="stylesheet" />
     <script src="Javascript/Home.js"></script>
-    <%--Slide Show--%>
+    <%-- First Option --%>
     <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,11 +74,11 @@
     </div> 
 </div>
 
-    <%-- The Three Options Border --%>
+    <%-- Second Option --%>
     <div id="ThreeOptions">
         <div class="optionsBorderWhiteSpace">
             </div>
-        <%-- First Option --%>
+        <%-- Third Option --%>
         <div class="optionsBorder">
             <div>
                 <asp:Image class="OptionsImage" ID="imgProducts" runat="server" ImageUrl="~/Images/shopCounter.jpg" />
@@ -86,12 +86,12 @@
             <div class="centerText">
                 <span class="RedText">1.Products</span><br />
                 To view all are available products.<br />
-                <asp:Button CssClass="RedButton" ID="btnProducts" runat="server" Text="Button" />
+                <asp:Button CssClass="RedButton" ID="btnProducts" runat="server" Text="View Menu" OnClick="btnProducts_Click" />
             </div>
         </div>
         <div class="optionsBorderWhiteSpace">
             </div>
-        <%-- Second Option --%>
+        <%-- Third Option --%>
         <div class="optionsBorder">
             <div>
                 <asp:Image class="OptionsImage" ID="imgLogIn" runat="server" ImageUrl="~/Images/login.jpg" BackColor="#CCCCFF" />
@@ -99,7 +99,7 @@
             <div class="centerText">
                 <span class="RedText">2.Log In</span><br />
                 To Log into your account.<br />
-                <asp:Button CssClass="RedButton" ID="Button1" runat="server" Text="Button" />
+                <asp:Button CssClass="RedButton" ID="btnLogin" runat="server" Text="View Login" OnClick="btnLogin_Click" />
             </div>
         </div>
         <div class="optionsBorderWhiteSpace">
@@ -112,7 +112,7 @@
             <div class="centerText">
                 <span class="RedText">3.Basket</span><br />
                 To view all the items you have added to basket.<br />
-                <asp:Button CssClass="RedButton" ID="Button2" runat="server" Text="Button" />
+                <asp:Button CssClass="RedButton" ID="btnBasket" runat="server" Text="View Basket" OnClick="btnBasket_Click" />
             </div>
         </div>
 

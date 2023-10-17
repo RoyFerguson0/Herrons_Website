@@ -2,10 +2,65 @@
 }
 
 /*Active Nav*/
-.nav #hylLogin {
+#hylLogin {
     background-color: #ddd;
     color: Black;
 }
-h1 {
-    color:red;
+
+/* Navbar Adjustment*/
+.navbar{
+    margin-bottom:revert;
 }
+
+#backgroundImg {
+    background: #475d62 url(../images/starSky.jpg);
+    background-size: cover;
+}
+
+#loginLogo {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top:20px;
+}
+
+#imgLoginLogo{
+    width:20%;
+    
+}
+#username {
+    width: 100%;
+    margin: auto;
+    text-align:center;
+    padding-top:20px;
+}
+
+#password {
+    width: 100%;
+    margin: auto;
+    text-align:center;
+    padding-top:10px;
+}
+
+#RememberMe {
+    width: 100%;
+    margin: auto;
+    text-align:center;
+    padding-top:5px;
+}
+
+#loginButton {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-bottom:20px;
+    padding-top:10px;
+}
+
+.boxes {
+    background-color:white;
+    color:black;
+    font-weight:bold;
+    
+}
+

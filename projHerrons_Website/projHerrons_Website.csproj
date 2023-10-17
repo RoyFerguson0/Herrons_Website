@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin.aspx" />
+    <Content Include="App_Data\Information.accdb" />
     <Content Include="Basket.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Images\basket.jpg" />
@@ -76,7 +77,9 @@
     <Content Include="Images\foodTwo.jpg" />
     <Content Include="Images\herrons-logo.jpg" />
     <Content Include="Images\login.jpg" />
+    <Content Include="Images\loginLogo.jpg" />
     <Content Include="Images\shopCounter.jpg" />
+    <Content Include="Images\starSky.jpg" />
     <Content Include="Images\wallpaper.jpg" />
     <Content Include="Javascript\Home.js" />
     <Content Include="Javascript\MasterPage.js" />
@@ -101,6 +104,9 @@
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\BLL\Accounts.cs" />
+    <Content Include="App_Code\BLL\Account.cs" />
+    <Content Include="App_Code\DAL\DataAccess.cs" />
     <Compile Include="Basket.aspx.cs">
       <DependentUpon>Basket.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -155,6 +161,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
