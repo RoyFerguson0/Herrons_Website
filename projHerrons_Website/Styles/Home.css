@@ -53,6 +53,11 @@
     padding-top: 50px;
     padding-bottom: 50px;
     float: left;
+    transition: width 2s, height 2s;
+}
+
+.optionsBorder:hover{
+    width:21%;
 }
 
 .optionsBorderWhiteSpace {
@@ -74,12 +79,14 @@
     font-weight:bold;
 }
 
-.OptionsImage{
-    width:100%;
+.OptionsImage {
+    width: 100%;
 }
 
-.RedButton{
-    color:red;
+
+
+.RedButton {
+    color: red;
     border: 1px solid red;
 }
 
