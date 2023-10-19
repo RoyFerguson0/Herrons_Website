@@ -11,7 +11,24 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Request.QueryString["cat"]!= null)
+            {
+                DataList1.DataSourceID = null;
+                DataList1.DataSource = SqlDataSource2;
+                DataList1.DataBind();
+            }
+        }
 
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            DataList1.DataSource = null;
+            DataList1.DataSource = SqlDataSource1;
+            DataList1.DataBind();
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Products.aspx?cat=Chips");
         }
     }
 }
