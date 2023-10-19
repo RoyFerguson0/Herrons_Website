@@ -38,8 +38,9 @@
     </div>
     <br />
     <br />
-    Product Categories:
-    <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Chips</asp:LinkButton>
+    Testing That the product and categories works<br />
+    <br />
+    Product Categories: <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Chips</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
     <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">View All Products</asp:LinkButton>
     <br />
@@ -81,6 +82,8 @@
             <br />
         </ItemTemplate>
     </asp:DataList>
+    <br />
+    <br />
     <br />
     <br />
     <br />
