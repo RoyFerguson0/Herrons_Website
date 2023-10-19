@@ -71,6 +71,9 @@
     <Content Include="App_Data\Information.accdb" />
     <Content Include="Basket.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="ImagesProducts\CheesyChips.jpg" />
+    <Content Include="ImagesProducts\GravyChips.jpg" />
+    <Content Include="ImagesProducts\PlainChips.jpg" />
     <Content Include="Images\basket.jpg" />
     <Content Include="Images\foodOne.jpg" />
     <Content Include="Images\foodThree.jpg" />
@@ -161,9 +164,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ImagesProducts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

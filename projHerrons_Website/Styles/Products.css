@@ -5,3 +5,25 @@
     background-color: #ddd;
     color: Black;
 }
+
+/*Using the Repeater*/
+.product {
+    background-color: #EEE;
+    margin-left: 1%;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 31.333%;
+    border-style: solid;
+    border-width: 1px;
+    border-spacing: 5px;
+}
+
+
+@media only screen and (max-width:786px) {
+    .product{
+        margin:revert;
+        margin:auto;
+        margin-bottom:10px;
+    }
+}
