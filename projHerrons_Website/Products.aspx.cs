@@ -11,38 +11,34 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["addproduct"] = "false";
             if (Request.QueryString["cat"]!= null)
             {
-                DataList1.DataSourceID = null;
-                DataList1.DataSource = SqlDataSource2;
-                DataList1.DataBind();
+                
 
-                ListView1.DataSourceID = null;
-                ListView1.DataSource = SqlDataSource2;
-                ListView1.DataBind();
+                lvProducts.DataSourceID = null;
+                lvProducts.DataSource = SqlDataSource2;
+                lvProducts.DataBind();
             }
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
-        {
-            DataList1.DataSource = null;
-            DataList1.DataSource = SqlDataSource1;
-            DataList1.DataBind();
-
-            ListView1.DataSource = null;
-            ListView1.DataSource = SqlDataSource1;
-            ListView1.DataBind();
-        }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        
+        protected void lbnChips_Click(object sender, EventArgs e)
         {
             Response.Redirect("Products.aspx?cat=Chips");
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void lbnAllProducts_Click(object sender, EventArgs e)
         {
-            string id = GridView1.SelectedRow.Cells[1].Text;
-            lblSelected.Text = id;
+            lvProducts.DataSource = null;
+            lvProducts.DataSource = SqlDataSource1;
+            lvProducts.DataBind();
+        }
+
+        protected void lvProducts_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            Session["addproduct"] = "true";
+            Response.Redirect("SelectedProduct.aspx?id=" + e.CommandArgument.ToString());
         }
     }
 }

@@ -1,16 +1,7 @@
 ﻿body {
 }
 
-#hylProducts {
-    background-color: #ddd;
-    color: Black;
-}
-
-#HomeContent{
-    text-align:center;
-}
-
-#imgProducts{
+#imgProducts {
     width: 60%;
     height: 120px;
 }
@@ -34,9 +25,9 @@
 
 
 @media only screen and (max-width:786px) {
-    .product{
-        margin:revert;
-        margin:auto;
-        margin-bottom:10px;
+    .product {
+        margin: revert;
+        margin: auto;
+        margin-bottom: 10px;
     }
 }

@@ -88,6 +88,7 @@
     <Content Include="Javascript\MasterPage.js" />
     <Content Include="Login.aspx" />
     <Content Include="Products.aspx" />
+    <Content Include="SelectedProduct.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="Styles\Admin.css" />
     <Content Include="Styles\Basket.css" />
@@ -95,6 +96,7 @@
     <Content Include="Styles\Login.css" />
     <Content Include="Styles\MasterPage.css" />
     <Content Include="Styles\Products.css" />
+    <Content Include="Styles\SelectedProduct.css" />
     <Content Include="Styles\SignUp.css" />
     <Content Include="Styles\socialMediaIcons.css" />
     <Content Include="Web.config" />
@@ -146,6 +148,13 @@
       <DependentUpon>Products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectedProduct.aspx.cs">
+      <DependentUpon>SelectedProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SelectedProduct.aspx.designer.cs">
+      <DependentUpon>SelectedProduct.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
