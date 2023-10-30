@@ -119,7 +119,7 @@
     </div>
 
 
-
+    <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
 
     
 </asp:Content>

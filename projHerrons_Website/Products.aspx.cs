@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projHerrons_Website.App_Code.BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["addproduct"] = "false";
+            if (!IsPostBack) { 
             if (Request.QueryString["cat"]!= null)
             {
                 
@@ -19,6 +20,7 @@ namespace projHerrons_Website
                 lvProducts.DataSourceID = null;
                 lvProducts.DataSource = SqlDataSource2;
                 lvProducts.DataBind();
+            }
             }
         }
 
@@ -37,8 +39,20 @@ namespace projHerrons_Website
 
         protected void lvProducts_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            Session["addproduct"] = "true";
+            //Product obj = new Product();
+            //obj.loadProduct(Convert.ToInt32(e.CommandArgument));
+            //String ID = obj.getProductID().ToString();
+            //String Name = obj.getProductName();
+            //String Desc = obj.getProductDesc();
+            //String Price = obj.getProductPrice();
+            //String Image = obj.getProductImage().ToString();
+            //String Category = obj.getProductCategory().ToString();
             Response.Redirect("SelectedProduct.aspx?id=" + e.CommandArgument.ToString());
+
+            //Response.Redirect("SelectedProduct.aspx?id=" + ID + "&name=" + Name + "&Desc=" + Desc +
+            //                    "&Price=" + Price + "&Image=" + Image + "&Category=" + Category);
+
+
         }
     }
 }

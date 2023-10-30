@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Web;
 
 namespace projHerrons_Website.App_Code.BLL
@@ -31,7 +32,7 @@ namespace projHerrons_Website.App_Code.BLL
         }
 
         // Populates a Account Object
-        public void loadStudent(int UserID)
+        public void loadAccount(int UserID)
         {
             // Using a Temporary Account Object to populate Data Fields
             Account tmpAccountObj = DataAccess.getAccount(UserID);
@@ -49,7 +50,17 @@ namespace projHerrons_Website.App_Code.BLL
 
         }
 
-        
+        public Account(String email, String password)
+        {
+            this.Email = email;
+            this.Password = password;
+        }
+
+        public int validateLogin()
+        {
+            int id = DataAccess.validateLogin(Email, Password);
+            return id;
+        }
 
         // Setters
 

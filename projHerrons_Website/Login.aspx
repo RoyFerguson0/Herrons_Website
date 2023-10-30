@@ -22,7 +22,14 @@
             <asp:CheckBox CssClass="boxes" Width="20%" ID="chkRememberMe" runat="server" Text="Remember Me" />
         </div>
         <div id="loginButton">
-            <asp:Button  CssClass="boxes" ID="btnLogin" runat="server" Text="Login" />
+            <asp:Button  CssClass="boxes" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
         </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        
     </div>
+    <asp:Label ID="lblOutput" runat="server" Text="Label"></asp:Label>
 </asp:Content>

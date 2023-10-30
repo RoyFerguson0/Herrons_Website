@@ -4,22 +4,22 @@
     <link href="Styles/SelectedProduct.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblProductID" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblProductName" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblProductDesc" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblProductPrice" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblProductCategory" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Image ID="Image1" runat="server" />
+    <asp:Image ID="imgProductImage" runat="server" />
     <br />
     <br />
     <br />

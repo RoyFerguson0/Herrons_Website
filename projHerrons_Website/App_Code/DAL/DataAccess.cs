@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.OleDb;
-using System.IdentityModel.Protocols.WSTrust;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Web;
@@ -143,6 +142,39 @@ namespace projHerrons_Website.App_Code.DAL
             {
                 return false;
             }
+        }
+
+
+        public static int validateLogin(string email, string pwd)
+        {
+            int userID = -1;
+
+            try
+            {
+                OleDbConnection con = openConnection();
+                //string strSQL = "SELECT UserID FROM tblAccounts WHERE " +
+                //    "'[UserEmail] = '" + email + "', [UserPassword] = '" + pwd;
+
+                //"(((Email) ='" + email + "') AND ((tblAccount.Password) ='" + pwd + "'))";
+
+                string strSQL = "SELECT tblAccounts.UserID FROM tblAccounts WHERE " +
+                                    "(((tblAccounts.Email) ='" + email + "') AND ((tblAccounts.Password) ='" + pwd + "'))";
+
+                OleDbCommand cmd = new OleDbCommand(strSQL, con);
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+                userID = Convert.ToInt32(reader["UserID"]);
+                closeConnection(con);
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            return userID;
         }
 
 

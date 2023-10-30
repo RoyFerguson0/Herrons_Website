@@ -30,7 +30,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="50" onload="detectViewPort();" onresize="detectViewPort();">
     <form id="form1" runat="server">
         <div id="HerronsLogo">
-            <img id="herronsImg" src="Images/herrons-logo.jpg" />
+            <img id="herronsImg" src="/Images/herrons-logo.jpg" />
         </div>
         <div id="myNavBar">
             <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -47,14 +47,14 @@
                   <ul class="nav navbar-nav">
                     <li><asp:HyperLink CssClass="myNavbar" ID="hylHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
                      <li><asp:HyperLink CssClass="myNavbar" ID="hylProducts" runat="server" NavigateUrl="~/Products.aspx">Products</asp:HyperLink></li>
-                     <li><asp:HyperLink CssClass="myNavbar" ID="hylAdmin" runat="server" NavigateUrl="~/Admin.aspx">Admin</asp:HyperLink></li>
+                     <li><asp:HyperLink CssClass="myNavbar" ID="hylAdmin" runat="server" NavigateUrl="~/Secure/Admin.aspx">Admin</asp:HyperLink></li>
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
 
                       <li><asp:HyperLink CssClass="myNavbar" ID="hylBasket" runat="server" NavigateUrl="~/Basket.aspx"><span class="fa fa-shopping-cart"></span> Basket</asp:HyperLink></li>
                       <li><asp:HyperLink CssClass="myNavbar" ID="hylSignUp" runat="server" NavigateUrl="~/SignUp.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up</asp:HyperLink></li>
-                      <li><asp:HyperLink CssClass="myNavbar" ID="hylLogin" runat="server" NavigateUrl="~/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</asp:HyperLink></li>
-                    
+                          <%--<li><asp:LoginStatus CssClass="myNavbar" ID="LoginStatus1" runat="server" NavigateUrl="~/Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</></li>--%>
+                      <li><asp:LoginStatus CssClass="myNavbar" ID="hylLogin" runat="server" /></li>
                   </ul>
                 </div>
               </div>

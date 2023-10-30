@@ -37,6 +37,7 @@
     .product{
         margin:revert;
         margin:auto;
+        width:60%;
         margin-bottom:10px;
     }
 }
