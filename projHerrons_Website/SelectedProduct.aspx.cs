@@ -1,6 +1,7 @@
 ﻿using projHerrons_Website.App_Code.BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,16 +12,22 @@ namespace projHerrons_Website
     public partial class SelectedProduct : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   
-           
+        {
+            if (!IsPostBack)
+            {
+                DataSet ds = new DataSet();
+                ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));     
+
+                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["firstHits"]);
+                hits++;
+                // lblHits.Text = hits.ToString();
+
+                ds.Tables[0].Rows[0]["firstHits"] = hits.ToString();
+                ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
+            }
+            
             if (Request.QueryString["id"] != null)
             {
-                    
-
-                lvProduct.DataSourceID = null;
-                lvProduct.DataSource = SqlDataSource1;
-                lvProduct.DataBind();
-
                 int id = Convert.ToInt32(Request.QueryString["id"]);
 
 

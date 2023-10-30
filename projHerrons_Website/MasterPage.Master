@@ -48,6 +48,8 @@
                     <li><asp:HyperLink CssClass="myNavbar" ID="hylHome" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink></li>
                      <li><asp:HyperLink CssClass="myNavbar" ID="hylProducts" runat="server" NavigateUrl="~/Products.aspx">Products</asp:HyperLink></li>
                      <li><asp:HyperLink CssClass="myNavbar" ID="hylAdmin" runat="server" NavigateUrl="~/Secure/Admin.aspx">Admin</asp:HyperLink></li>
+
+
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
 

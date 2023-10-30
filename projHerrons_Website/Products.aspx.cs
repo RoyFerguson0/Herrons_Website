@@ -1,6 +1,7 @@
 ﻿using projHerrons_Website.App_Code.BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,15 +13,27 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack) { 
-            if (Request.QueryString["cat"]!= null)
-            {
+            if (!IsPostBack) {
+                DataSet ds = new DataSet();
+                ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));      // "/"  if you have it in a folder
+
+                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["cookieHits"]); // Instead of 0 in tables you could put 'count'
+                hits++;
+
+                ViewState["hitsCookie"] = hits;
+
+                ds.Tables[0].Rows[0]["cookieHits"] = hits.ToString();
+                ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
+
+
+                if (Request.QueryString["cat"]!= null)
+                {
                 
 
-                lvProducts.DataSourceID = null;
-                lvProducts.DataSource = SqlDataSource2;
-                lvProducts.DataBind();
-            }
+                    lvProducts.DataSourceID = null;
+                    lvProducts.DataSource = SqlDataSource2;
+                    lvProducts.DataBind();
+                }
             }
         }
 
@@ -58,8 +71,9 @@ namespace projHerrons_Website
             //System.Diagnostics.Debug.WriteLine(Price);
             //System.Diagnostics.Debug.WriteLine(Image);
             ////System.Diagnostics.Debug.WriteLine(Category);
-            Response.Redirect("SelectedProduct.aspx?id=" + ID + "&name=" + Name + "&Desc=" + Desc +
-                                "&Price=" + Price + "&Image=" + Image + "&Category=" + Category);
+            Response.Redirect("SelectedProduct.aspx?id=" + Server.UrlEncode(ID) + "&name=" + Server.UrlEncode(Name) + 
+                "&Desc=" + Server.UrlEncode(Desc) + "&Price=" + Server.UrlEncode(Price) + "&Image=" + Server.UrlEncode(Image) + 
+                "&Category=" + Server.UrlEncode(Category));
 
 
         }

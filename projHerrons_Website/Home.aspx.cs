@@ -13,6 +13,7 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!Page.IsPostBack)  //Page is required as it already has access to Page
             {
                 if (User.Identity.IsAuthenticated)

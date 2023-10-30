@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\NumberOfHits.xml" />
+    <Content Include="Global.asax" />
     <Content Include="Secure\Admin.aspx" />
     <Content Include="App_Data\Information.accdb" />
     <Content Include="Basket.aspx" />
@@ -107,6 +109,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

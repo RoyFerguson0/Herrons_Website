@@ -25,7 +25,7 @@
         <asp:ListItem>Small</asp:ListItem>
         <asp:ListItem Selected="True">Medium</asp:ListItem>
         <asp:ListItem>Large</asp:ListItem>
-    </asp:DropDownList>
+</asp:DropDownList>
     <br />
     <br />
     <br />
