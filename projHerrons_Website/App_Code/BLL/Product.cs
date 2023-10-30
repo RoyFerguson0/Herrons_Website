@@ -11,11 +11,14 @@ namespace projHerrons_Website.App_Code.BLL
         private int ProductID;
         private String ProductName;
         private String ProductDesc;
-        private String ProductPrice;
+        private Double ProductPrice;
         private String ProductImage;
         private String ProductCategory;
 
-        
+        public Product()
+        {
+
+        }
 
         public void loadProduct(int ProductID)
         {
@@ -45,7 +48,7 @@ namespace projHerrons_Website.App_Code.BLL
             this.ProductDesc = ProductDesc;
         }
 
-        public void setProductPrice(String ProductPrice)
+        public void setProductPrice(Double ProductPrice)
         {
             this.ProductPrice = ProductPrice;
         }
@@ -62,34 +65,35 @@ namespace projHerrons_Website.App_Code.BLL
 
         // Getters
 
-        public String getProductID()
+        public int getProductID()
         {
-            return this.getProductID();
+            return this.ProductID;
         }
+
 
         public String getProductName()
         {
-            return this.getProductName();
+            return this.ProductName;
         }
 
         public String getProductDesc()
         {
-            return this.getProductDesc();
+            return this.ProductDesc;
         }
 
-        public String getProductPrice()
+        public Double getProductPrice()
         {
-            return this.getProductPrice();
+            return this.ProductPrice;
         }
 
-        public Product getProductImage()
+        public String getProductImage()
         {
-            return this.getProductImage();
+            return this.ProductImage;
         }
 
-        public int getProductCategory()
+        public String getProductCategory()
         {
-            return this.getProductCategory();
+            return this.ProductCategory;
         }
 
 

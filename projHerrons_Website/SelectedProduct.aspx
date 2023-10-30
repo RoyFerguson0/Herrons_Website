@@ -21,41 +21,12 @@
     <br />
     <asp:Image ID="imgProductImage" runat="server" />
     <br />
+    <asp:DropDownList ID="ddlSize" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSize_SelectedIndexChanged">
+        <asp:ListItem>Small</asp:ListItem>
+        <asp:ListItem Selected="True">Medium</asp:ListItem>
+        <asp:ListItem>Large</asp:ListItem>
+    </asp:DropDownList>
     <br />
-    <br />
-    <asp:ListView ID="lvProduct"  runat="server" DataSourceID="SqlDataSource1">
-        <ItemTemplate >
-        
-            <HeaderTemplate>
-            </HeaderTemplate>
-            <ItemTemplate >
-                <div class="col-sm-4 product ">
-                    
-                    <asp:Image id="imgProducts" CssClass="imgProducts" runat="server" ImageUrl='<%#Eval("ProductImage")%>'/>
-
-                    
-                    <p><%#Eval("ProductName")%></p>
-                
-                    <p><%#Eval("ProductPrice")%></p>
-
-                    <asp:Button ID="btnSelectedProduct" runat="server" Text="Button" CommandArgument='<%# Eval("ProductID")%>' CommandName="addtocart" />
-                </div>
-            </ItemTemplate>
-            <FooterTemplate>
-            </FooterTemplate>
-           
-            </ItemTemplate>
-        
-    </asp:ListView>
-    <br />
-    <br />
-    <br />
-    <br />
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tblProducts] WHERE ([ProductID] = ?)">
-        <SelectParameters>
-            <asp:QueryStringParameter Name="ProductID" QueryStringField="id" Type="Int32" />
-        </SelectParameters>
-    </asp:SqlDataSource>
     <br />
     <br />
 

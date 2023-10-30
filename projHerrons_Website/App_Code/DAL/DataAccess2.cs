@@ -37,12 +37,14 @@ namespace projHerrons_Website.App_Code.DAL
         } //Close Connection
 
 
-        public static Product getProduct(int id)
+       
+
+        public static Product getProduct(Double id)
         {
             Product obj = new Product();
 
             OleDbConnection conn = openConnection();
-            string sqlStr = "SELECT ProductID, ProductName, ProductDescription, ProductPrice, ProductImage, ProductCategory FROM tblProducts" +
+            string sqlStr = "SELECT * FROM tblProducts" +
                 " WHERE ProductID=" + id;
 
             OleDbCommand cmd = new OleDbCommand(sqlStr, conn);
@@ -55,7 +57,7 @@ namespace projHerrons_Website.App_Code.DAL
                 obj.setProductID(Convert.ToInt32(reader["ProductID"]));
                 obj.setProductName(reader["ProductName"].ToString());
                 obj.setProductDescription(reader["ProductDescription"].ToString());
-                obj.setProductPrice(reader["ProductPrice"].ToString());
+                obj.setProductPrice(Convert.ToDouble(reader["ProductPrice"].ToString()));
                 obj.setProductImage(reader["ProductImage"].ToString());
                 obj.setProductCategory(reader["ProductCategory"].ToString());
 

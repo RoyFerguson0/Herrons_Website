@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +18,7 @@ namespace projHerrons_Website
                 if (User.Identity.IsAuthenticated)
                 {
                     lblGreeting.Text = "Welcome " + User.Identity.Name;
+                    
                 }
                 else
                 {

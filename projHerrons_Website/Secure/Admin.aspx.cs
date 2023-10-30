@@ -12,14 +12,7 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (User.Identity.IsAuthenticated)
-            {
-                Account UserObj = new Account();
-                if(UserObj.getStatus() != null)
-                {
-                    
-                }
-            }
+            
         }
     }
 }

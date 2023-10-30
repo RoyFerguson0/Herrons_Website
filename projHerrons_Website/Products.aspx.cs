@@ -39,18 +39,27 @@ namespace projHerrons_Website
 
         protected void lvProducts_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            //Product obj = new Product();
-            //obj.loadProduct(Convert.ToInt32(e.CommandArgument));
-            //String ID = obj.getProductID().ToString();
-            //String Name = obj.getProductName();
-            //String Desc = obj.getProductDesc();
-            //String Price = obj.getProductPrice();
-            //String Image = obj.getProductImage().ToString();
-            //String Category = obj.getProductCategory().ToString();
-            Response.Redirect("SelectedProduct.aspx?id=" + e.CommandArgument.ToString());
+            Product obj = new Product();
+            int id = Convert.ToInt32(e.CommandArgument);
+            System.Diagnostics.Debug.WriteLine(id);
 
-            //Response.Redirect("SelectedProduct.aspx?id=" + ID + "&name=" + Name + "&Desc=" + Desc +
-            //                    "&Price=" + Price + "&Image=" + Image + "&Category=" + Category);
+            obj.loadProduct(id);
+            String ID = obj.getProductID().ToString();
+            String Name = obj.getProductName();
+            String Desc = obj.getProductDesc();
+            String Price = obj.getProductPrice().ToString();
+            String Image = obj.getProductImage().ToString();
+            String Category = obj.getProductCategory().ToString();
+            //Response.Redirect("SelectedProduct.aspx?id=" + e.CommandArgument.ToString());
+
+            //System.Diagnostics.Debug.WriteLine(ID);
+            //System.Diagnostics.Debug.WriteLine(Name);
+            //System.Diagnostics.Debug.WriteLine(Desc);
+            //System.Diagnostics.Debug.WriteLine(Price);
+            //System.Diagnostics.Debug.WriteLine(Image);
+            ////System.Diagnostics.Debug.WriteLine(Category);
+            Response.Redirect("SelectedProduct.aspx?id=" + ID + "&name=" + Name + "&Desc=" + Desc +
+                                "&Price=" + Price + "&Image=" + Image + "&Category=" + Category);
 
 
         }

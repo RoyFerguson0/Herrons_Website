@@ -100,6 +100,7 @@ namespace projHerrons_Website.App_Code.BLL
             this.Status = Status;
         }
 
+        
 
 
 
@@ -140,6 +141,10 @@ namespace projHerrons_Website.App_Code.BLL
         {
             return this.Status;
         }
+
+
+        
+
 
         // Create New Account User
         public void createNewAccount()

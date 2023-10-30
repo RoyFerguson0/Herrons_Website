@@ -24,12 +24,5 @@
         <div id="loginButton">
             <asp:Button  CssClass="boxes" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
         </div>
-
-        <br />
-        <br />
-        <br />
-        <br />
-        
     </div>
-    <asp:Label ID="lblOutput" runat="server" Text="Label"></asp:Label>
 </asp:Content>

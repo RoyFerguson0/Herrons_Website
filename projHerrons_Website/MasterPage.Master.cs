@@ -13,11 +13,31 @@ namespace projHerrons_Website
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.MaintainScrollPositionOnPostBack = true;
+            if (Session["loggedInStatus"] == null)
+            {
+                Session["loggedInStatus"] = "";
+            }
             if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 hylSignUp.Visible = false;
+                String status = Session["loggedInStatus"].ToString();
 
-               
+
+
+                System.Diagnostics.Debug.WriteLine(Session["loggedInStatus"]);
+                if (status == "Admin")
+                {
+                    hylAdmin.Visible = true;
+                }
+                else
+                {
+                    hylAdmin.Visible = false;
+                }
+
+            }
+            else
+            {
+                Session["loggedInStatus"] = "";
             }
         }
     }

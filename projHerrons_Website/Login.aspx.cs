@@ -20,23 +20,22 @@ namespace projHerrons_Website
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
+            System.Diagnostics.Debug.WriteLine("Test2 " + username + ":" + password);
             Account accountObj = new Account(username, password);
             int userNum = accountObj.validateLogin();
 
             if (userNum != -1)
             {
+                // Loading the Valid User to Get Status
                 Account AccOjb = new Account();
                 AccOjb.loadAccount(userNum);
-                // NEED TO SET PERMANENT ID FOR LOGGED IN USERS + STATUS
-
-
+                String status = AccOjb.getStatus();
+                // Storing Status in a Session Variable so that it can be accessed on other web pages.
+                Session["loggedInStatus"] = status;
                 FormsAuthentication.RedirectFromLoginPage(username, true);
-                lblOutput.Text = "Validated";
+                
             }
-            else
-            {
-                lblOutput.Text = "Invalid Login";
-            }
+            
         }
     }
 }
