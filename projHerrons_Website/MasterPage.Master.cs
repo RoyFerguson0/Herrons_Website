@@ -24,7 +24,6 @@ namespace projHerrons_Website
 
 
 
-                System.Diagnostics.Debug.WriteLine(Session["loggedInStatus"]);
                 if (status == "Admin")
                 {
                     hylAdmin.Visible = true;

@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="projHerrons_Website.Home" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/Home.css" rel="stylesheet" />
-    <script src="Javascript/Home.js"></script>
     <%-- First Option --%>
     <title>Bootstrap Example</title>
   <meta charset="utf-8">

@@ -13,14 +13,17 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Request.Cookies["rememberMe"] != null)
+            {
+                txtUsername.Text = Request.Cookies["rememberMe"]["username"].ToString();
+                txtPassword.Text = Request.Cookies["rememberMe"]["password"].ToString();
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             String username = txtUsername.Text;
             String password = txtPassword.Text;
-            System.Diagnostics.Debug.WriteLine("Test2 " + username + ":" + password);
             Account accountObj = new Account(username, password);
             int userNum = accountObj.validateLogin();
 
@@ -33,9 +36,23 @@ namespace projHerrons_Website
                 // Storing Status in a Session Variable so that it can be accessed on other web pages.
                 Session["loggedInStatus"] = status;
                 FormsAuthentication.RedirectFromLoginPage(username, true);
-                
+
+                // Remember me If checked
+                if (chkRememberMe.Checked)
+                {
+                    HttpCookie objCookie = new HttpCookie("rememberMe");
+                    objCookie["username"] = username;
+                    objCookie["password"] = password;
+
+                    objCookie.Expires = DateTime.Now.Add(new TimeSpan(0, 0, 3, 0));
+
+                    Response.Cookies.Add(objCookie);
+                }
+
             }
             
         }
+
+        
     }
 }

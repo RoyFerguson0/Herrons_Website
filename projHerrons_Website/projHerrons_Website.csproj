@@ -86,7 +86,6 @@
     <Content Include="Images\shopCounter.jpg" />
     <Content Include="Images\starSky.jpg" />
     <Content Include="Images\wallpaper.jpg" />
-    <Content Include="Javascript\Home.js" />
     <Content Include="Javascript\MasterPage.js" />
     <Content Include="Login.aspx" />
     <Content Include="Products.aspx" />

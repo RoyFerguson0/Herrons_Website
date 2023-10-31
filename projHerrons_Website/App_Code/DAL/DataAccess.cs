@@ -39,8 +39,8 @@ namespace projHerrons_Website.App_Code.DAL
         {
             OleDbConnection conn = openConnection(); // Communicate With Database
 
-            String sqlStr = "INSERT into tblAccounts(FirstName, LastName, Email, Password, Status)" +
-                "VALUES('" + Firstname + "', '" + Lastname + "', '" + Email + "' + '" + Password + "' + '" + Status + "')";
+            String sqlStr = "INSERT into tblAccounts(FirstName, LastName, Email, [Password], Status)" +
+                "VALUES('"+ Firstname + "', '" + Lastname + "', '" + Email + "', '" + Password + "', '" + Status + "')";
 
             OleDbCommand cmd = new OleDbCommand(sqlStr, conn); 
 
