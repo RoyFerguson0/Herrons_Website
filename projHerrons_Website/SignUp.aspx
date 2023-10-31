@@ -72,6 +72,7 @@
 
                         <div class="form-outline mb-4">
                           <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                            <%--<asp:TextBox  ID="txtFirstName" class="form-control form-control-lg" runat="server"></asp:TextBox>--%>
                           <label class="form-label" for="form3Example1cg">First Name</label>
                         </div>
 
