@@ -16,7 +16,7 @@
         </div>
         <div id="password">
             <asp:Label CssClass="boxes" Width="20%" ID="lblPassword" runat="server" Text="Password:"></asp:Label>
-            <asp:TextBox CssClass="boxes" ID="txtPassword" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="boxes" ID="txtPassword" runat="server" TextMode="Password"></asp:TextBox>
         </div>
         <div id="RememberMe">
             <asp:CheckBox CssClass="boxes" Width="20%" ID="chkRememberMe" runat="server" Text="Remember Me" />

@@ -15,13 +15,13 @@ namespace projHerrons_Website
     {
 
         /// <summary>
-        /// lblProductID control.
+        /// imgProductImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductID;
+        protected global::System.Web.UI.WebControls.Image imgProductImage;
 
         /// <summary>
         /// lblProductName control.
@@ -42,6 +42,15 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.Label lblProductDesc;
 
         /// <summary>
+        /// ddlSize control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSize;
+
+        /// <summary>
         /// lblProductPrice control.
         /// </summary>
         /// <remarks>
@@ -51,30 +60,12 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.Label lblProductPrice;
 
         /// <summary>
-        /// lblProductCategory control.
+        /// btnPurchase control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblProductCategory;
-
-        /// <summary>
-        /// imgProductImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgProductImage;
-
-        /// <summary>
-        /// ddlSize control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSize;
+        protected global::System.Web.UI.WebControls.Button btnPurchase;
     }
 }

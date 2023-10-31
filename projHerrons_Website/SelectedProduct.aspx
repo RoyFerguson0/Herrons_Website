@@ -4,32 +4,58 @@
     <link href="Styles/SelectedProduct.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:Label ID="lblProductID" runat="server" Text="Label"></asp:Label>
-    <br />
-    <br />
-    <asp:Label ID="lblProductName" runat="server" Text="Label"></asp:Label>
-    <br />
-    <br />
-    <asp:Label ID="lblProductDesc" runat="server" Text="Label"></asp:Label>
-    <br />
-    <br />
-    <asp:Label ID="lblProductPrice" runat="server" Text="Label"></asp:Label>
-    <br />
-    <br />
-    <asp:Label ID="lblProductCategory" runat="server" Text="Label"></asp:Label>
-    <br />
-    <br />
-    <asp:Image ID="imgProductImage" runat="server" />
-    <br />
-    <asp:DropDownList ID="ddlSize" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSize_SelectedIndexChanged">
-        <asp:ListItem>Small</asp:ListItem>
-        <asp:ListItem Selected="True">Medium</asp:ListItem>
-        <asp:ListItem>Large</asp:ListItem>
-</asp:DropDownList>
-    <br />
-    <br />
-    <br />
+     
+    <div id="content">
+        <div id="firstSection">
+            <asp:Image ID="imgProductImage" runat="server" />
+        </div>
+        <div id="secondSection">
+            <div id="headOne" class="headings">
+                Name:
+                <asp:Label ID="lblProductName" runat="server" Text="Label"></asp:Label>
+            </div>
+            <div id="headTwo" class="headings">
+                Description:
+                <asp:Label ID="lblProductDesc" runat="server" Text="Label"></asp:Label>
+            </div>
+            <div id="headThree" class="headings">
+                Size:
+                <asp:DropDownList ID="ddlSize" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlSize_SelectedIndexChanged">
+                    <asp:ListItem>Small</asp:ListItem>
+                    <asp:ListItem Selected="True">Medium</asp:ListItem>
+                    <asp:ListItem>Large</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <div id="headFour" class="headings">
+                £<asp:Label ID="lblProductPrice" runat="server" Text="Label"></asp:Label>
+            </div>
+            <div id="headFive" class="headings">
+                <asp:Button ID="btnPurchase" runat="server" Text="Purchase" OnClick="btnPurchase_Click" />
+            </div>
+            
+        </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+        
+        
+    
+   
     
 
 

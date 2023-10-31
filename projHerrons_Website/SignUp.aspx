@@ -10,13 +10,13 @@
     <div id="Testing">
         <section class="vh-100 bg-image"
           style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-          <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+          <div id="changeStyle" class="mask d-flex align-items-center h-100 gradient-custom-3">
             <div class="container h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-12 col-md-9 col-lg-7 col-xl-6">
                   <div class="card" style="border-radius: 15px;">
                     <div class="card-body p-5">
-                      <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+                      <h2 id="changeFont" class="text-uppercase text-center mb-5">Create an account</h2>
 
                       <form>
 
@@ -40,13 +40,13 @@
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example4cg">Password</label>
-                            <asp:textbox id="txtPassword" class="form-control form-control-lg" runat="server"></asp:textBox>
+                            <asp:textbox id="txtPassword" class="form-control form-control-lg" runat="server" TextMode="Password"></asp:textBox>
                           
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                            <asp:textbox id="txtPasswordRepeat" class="form-control form-control-lg" runat="server"></asp:textBox>
+                            <asp:textbox id="txtPasswordRepeat" class="form-control form-control-lg" runat="server" TextMode="Password"></asp:textBox>
                           
                         </div>
 

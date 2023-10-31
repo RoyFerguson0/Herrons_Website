@@ -1,6 +1,16 @@
 ﻿body {
 }
 
+#homeContent {
+    width: 95%;
+    margin: auto;
+}
+
+#tabIN {
+    width: 95%;
+    margin: auto;
+}
+
 #hylBasket {
     background-color: #ddd;
     color: Black;

@@ -10,6 +10,65 @@
     width: 60%;
     height: 120px;
 }
+
+#content{
+    width:80%;
+    margin:auto;
+    
+}
+
+#firstSection{
+    width:50%;
+    float:left;
+    border-top:1px solid black;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+
+#secondSection {
+    width: 50%;
+    float: left;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.headings {
+    width: 100%;
+    float: left;
+    text-align: center;
+    height: 100px;
+    font-size: xx-large;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    padding-top:25px;
+}
+
+#headOne{
+    font-size:revert;
+    font-size: 36px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#ContentPlaceHolder1_imgProductImage {
+    width: 100%;
+    height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*Using the Repeater*/
 .product {
     background-color: #EEE;
@@ -24,10 +83,121 @@
 }
 
 
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width:786px) {
     .product {
         margin: revert;
         margin: auto;
         margin-bottom: 10px;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width:1700px) {
+    #firstSection {
+        width: 50%;
+        float: left;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+
+    #secondSection {
+        width: 50%;
+        float: left;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    .headings {
+        width: 100%;
+        float: left;
+        text-align: center;
+        height:revert;
+        height: 60px;
+        font-size: revert;
+        font-size: large;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-top:revert;
+        padding-top:15px;
+    }
+
+    #headOne {
+        font-size: revert;
+        font-size: 26px;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    #ContentPlaceHolder1_imgProductImage {
+        width: revert;
+        height: revert;
+        width: 100%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    #firstSection {
+        width:revert;
+        width: 100%;
+        float: left;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        text-align:center;
+    }
+
+
+    #secondSection {
+        width:revert;
+        width: 100%;
+        float: left;
+        border-top: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    .headings {
+        width: 100%;
+        float: left;
+        text-align: center;
+        height: revert;
+        height: 60px;
+        font-size: revert;
+        font-size: large;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-top: revert;
+        padding-top: 15px;
+    }
+
+    #headOne {
+        font-size: revert;
+        font-size: 26px;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    #ContentPlaceHolder1_imgProductImage {
+        width: revert;
+        height: revert;
+        width: 80%;
+        height: 200px;
     }
 }

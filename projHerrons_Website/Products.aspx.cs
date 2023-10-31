@@ -1,5 +1,6 @@
 ﻿using projHerrons_Website.App_Code.BLL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -25,6 +26,15 @@ namespace projHerrons_Website
                 ds.Tables[0].Rows[0]["cookieHits"] = hits.ToString();
                 ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
 
+                if (!IsPostBack)
+                {
+                    // create cart for this session but only if session doesn't already exist
+                    if (Session["CART"] == null)
+                    {
+                        ArrayList arrCart = new ArrayList();
+                        Session["CART"] = arrCart;
+                    }
+                }
 
                 if (Request.QueryString["cat"]!= null)
                 {
@@ -45,16 +55,21 @@ namespace projHerrons_Website
 
         protected void lbnAllProducts_Click(object sender, EventArgs e)
         {
-            lvProducts.DataSource = null;
-            lvProducts.DataSource = SqlDataSource1;
-            lvProducts.DataBind();
+            try
+            {
+                lvProducts.DataSourceID = null;
+                lvProducts.DataSource = SqlDataSource1;
+                lvProducts.DataBind();
+            }catch(Exception ex)
+            {
+
+            }
         }
 
         protected void lvProducts_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
             Product obj = new Product();
             int id = Convert.ToInt32(e.CommandArgument);
-            System.Diagnostics.Debug.WriteLine(id);
 
             obj.loadProduct(id);
             String ID = obj.getProductID().ToString();
