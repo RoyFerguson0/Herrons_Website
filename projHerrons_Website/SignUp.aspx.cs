@@ -18,15 +18,37 @@ namespace projHerrons_Website
 
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
-            Account objUser = new Account();
-            objUser.setFirstName(txtFirstName.Text);
-            objUser.setLastName(txtLastName.Text);
-            objUser.setEmail(txtEmail.Text.ToString());
-            objUser.setPassword(txtPassword.Text);
-            objUser.setStatus("User");
-            objUser.createNewAccount();
+            System.Diagnostics.Debug.WriteLine(txtFirstName.Text);
+            if (txtFirstName.Text != "" || txtLastName.Text != "" || txtEmail.Text != "" || txtPassword.Text != "" || txtPasswordRepeat.Text != "")
+            {
+                if (txtPassword.Text == txtPasswordRepeat.Text)
+                {
+                    if (chkTerms.Checked)
+                    {
+                        Account objUser = new Account();
+                        objUser.setFirstName(txtFirstName.Text);
+                        objUser.setLastName(txtLastName.Text);
+                        objUser.setEmail(txtEmail.Text.ToString());
+                        objUser.setPassword(txtPassword.Text);
+                        objUser.setStatus("User");
+                        objUser.createNewAccount();
 
-            lblOuput.Text = "Created Account" + objUser.getUserID();
+                        lblOuput.Text = "Created Account" + objUser.getUserID();
+                    }
+                    else
+                    {
+                        lblOuput.Text = "Check The Terms!!!";
+                    }
+                }
+                else
+                {
+                    lblOuput.Text = "Passwords Don't Match";
+                }
+            }
+            else
+            {
+                lblOuput.Text = "Fill All Boxes In!!!!";
+            }
         }
     }
 }

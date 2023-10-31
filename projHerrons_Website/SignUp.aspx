@@ -6,56 +6,6 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div id="CenterText">
-        <h1 id="heading">CREATE AN ACCOUNT</h1>
-        <%-- First Name --%>
-        <div class="center" id="FirstName">
-            <div class="floatingR">
-            <asp:Label  ID="lblFirstName" runat="server" Text="First Name:"></asp:Label>
-            </div>
-            <div class="floatingL">
-            <asp:TextBox  ID="txtFirstName" runat="server"></asp:TextBox>
-            </div>
-        </div>
-        <%-- Last Name --%>
-        <div class="center" id="LastName">
-            <div class="floatingR"> 
-            <asp:Label ID="lblLastName" runat="server" Text="Last Name:"></asp:Label>
-            </div>
-            <div class="floatingL">
-            <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
-            </div>
-        </div>
-        <%-- Email --%>
-        <div class="center" id="Email">
-            <div class="floatingR">
-            <asp:Label ID="lblEmail" runat="server" Text="Email:"></asp:Label>
-            </div>
-            <div class="floatingL">
-            <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
-            </div>
-        </div>
-        <%-- Password --%>
-        <div class="center" id="Password">
-            <div class="floatingR">
-            <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:label>
-            </div>
-            <div class="floatingL">
-            <asp:textbox id="txtPassword" runat="server"></asp:textBox>
-            </div>
-        </div>
-        <%-- Button - SignUP --%>
-        <div class="center" id="SignUp">
-            <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
-        </div>
-        <div class="center">
-            <asp:Label ID="lblOuput" runat="server" Text="Label"></asp:Label>
-        </div>
-    </div>
-
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     <div id="Testing">
         <section class="vh-100 bg-image"
@@ -71,48 +21,53 @@
                       <form>
 
                         <div class="form-outline mb-4">
-                          <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                            <%--<asp:TextBox  ID="txtFirstName" class="form-control form-control-lg" runat="server"></asp:TextBox>--%>
-                          <label class="form-label" for="form3Example1cg">First Name</label>
+                            <label class="form-label" for="form3Example1cg">First Name</label>
+                            <asp:TextBox  ID="txtFirstName" class="form-control form-control-lg" runat="server"></asp:TextBox>
+                          
                         </div>
 
                         <div class="form-outline mb-4">
-                          <input type="text" id="form3Example1cdg" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example1cg">Last Name</label>
+                            <label class="form-label" for="form3Example1cg">Last Name</label>
+                            <asp:TextBox ID="txtLastName" class="form-control form-control-lg" runat="server"></asp:TextBox>
+                          
                         </div>
 
                         <div class="form-outline mb-4">
-                          <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example3cg">Your Email</label>
+                            <label class="form-label" for="form3Example3cg">Your Email</label>
+                            <asp:TextBox ID="txtEmail" class="form-control form-control-lg" runat="server"></asp:TextBox>
+                          
                         </div>
 
                         <div class="form-outline mb-4">
-                          <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example4cg">Password</label>
+                            <label class="form-label" for="form3Example4cg">Password</label>
+                            <asp:textbox id="txtPassword" class="form-control form-control-lg" runat="server"></asp:textBox>
+                          
                         </div>
 
                         <div class="form-outline mb-4">
-                          <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                            <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                            <asp:textbox id="txtPasswordRepeat" class="form-control form-control-lg" runat="server"></asp:textBox>
+                          
                         </div>
 
                         <div class="form-check d-flex justify-content-center mb-5">
-                          <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                            <asp:CheckBox ID="chkTerms" class="form-check-input me-2" runat="server" />
                           <label class="form-check-label" for="form2Example3g">
                             I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
                           </label>
                         </div>
 
                         <div class="d-flex justify-content-center">
-                          <button type="button"
-                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                            <asp:Button ID="btnSignUp" class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
                         </div>
 
-                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="Login.aspx"
                             class="fw-bold text-body"><u>Login here</u></a></p>
-
+                          
                       </form>
-
+                        <div id="output">
+                        <asp:Label ID="lblOuput" runat="server" Text=""></asp:Label>
+                            </div>
                     </div>
                   </div>
                 </div>
@@ -120,9 +75,10 @@
             </div>
           </div>
         </section>
+
     </div>
 
-
+    
 
 
 </asp:Content>
