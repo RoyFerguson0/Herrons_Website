@@ -67,7 +67,80 @@ namespace projHerrons_Website.App_Code.DAL
 
             return obj;
 
-        } // getStudent
+        } // getProduct
+
+        public static int createProduct(String ProductName, String ProductDesc, Double ProductPrice, String ProductImage, String ProductCategory)
+        {
+            //Need to know where the database is and what you are going to add to it
+
+            OleDbConnection conn = openConnection();  // Communicate with database
+
+            String sqlStr = "INSERT into tblProducts(ProductName, ProductDescription, ProductPrice, ProductImage, ProductCategory)" +     //What you are wanting to add 
+                " VALUES('" + ProductName + "', '" + ProductDesc + "', '" + ProductPrice + "', '" + ProductImage + "', '" + ProductCategory + "')";
+
+            OleDbCommand cmd = new OleDbCommand(sqlStr, conn);   // Needs to be the right way round
+            // Line above is what the line below is doing 
+            // cmd.CommandText = sqlStr;
+            // cmd.Connection = conn;
+
+            cmd.ExecuteNonQuery(); //Non Query for insert, update, delete. Anything else would be scalar e.g. Get information.
+
+            cmd.CommandText = "SELECT @@IDENTITY";
+
+            int studentID = Convert.ToInt32(cmd.ExecuteScalar());   // Is going to get primary key - Gets one piece of data the Scalar value
+
+            closeConnection(conn); // To close the database
+
+            return studentID;
+
+        } //createProduct
+
+
+        public static bool updateProduct(int ProductID, String ProductName, String ProductDesc, Double ProductPrice, String ProductImage, String ProductCategory)
+        {
+            OleDbConnection conn = openConnection();
+
+            string sqlStr = "UPDATE tblProducts SET [ProductName] = '" + ProductName + "',[ProductDescription] = '" + ProductDesc +
+                "',[ProductPrice] = '" + ProductPrice + "',[ProductImage] = '" + ProductImage + "',[ProductCategory] = '" + ProductCategory + 
+                "' WHERE ProductID=" + ProductID;
+
+            OleDbCommand cmd = new OleDbCommand(sqlStr, conn);
+
+            int count = cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } // UpdateProduct
+
+        public static bool removeProduct(int id)
+        {
+
+            OleDbConnection conn = openConnection();
+            string sqlStr = "DELETE FROM tblProducts WHERE ProductID=" + id;
+
+            OleDbCommand cmd = new OleDbCommand(sqlStr, conn);
+
+            int count = cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        } // remove Product
 
 
     }

@@ -5,3 +5,63 @@
     background-color: #ddd;
     color: Black;
 }
+
+#content{
+    width:100%;
+    margin:auto;
+}
+
+#updateUser{
+    width:80%;
+    margin:auto;
+    text-align:center;
+}
+
+#updateProduct {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+#createProduct {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+#ContentPlaceHolder1_lblFileUploadCreate {
+    float: left;
+    margin:auto;
+    text-align:right;
+    width:40%;
+}
+
+#ContentPlaceHolder1_fuCreateProductImage {
+    float: left;
+    text-align: center;
+    margin: auto;
+}
+
+#ContentPlaceHolder1_lblCreateCategory {
+    float: left;
+    margin: auto;
+    text-align: right;
+    width: 40%;
+}
+
+#ContentPlaceHolder1_txtCreateProductCategory {
+    float: left;
+    text-align: center;
+    margin: auto;
+}
+
+.marginBottom{
+    margin-bottom:5px;
+}
+
+#findUser{
+    margin-bottom:8px;
+}
+
+#foundNot{
+    padding-bottom:8px;
+}

@@ -34,7 +34,7 @@
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3cg">Your Email</label>
-                            <asp:TextBox ID="txtEmail" class="form-control form-control-lg" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" class="form-control form-control-lg" runat="server" TextMode="Email"></asp:TextBox>
                           
                         </div>
 

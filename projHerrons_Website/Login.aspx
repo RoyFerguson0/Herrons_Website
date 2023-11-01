@@ -12,7 +12,7 @@
         </div>
         <div id="username">
             <asp:Label CssClass="boxes" Width="20%"  ID="lblUsername" runat="server" Text="Username:"></asp:Label>
-            <asp:TextBox CssClass="boxes" ID="txtUsername" runat="server"></asp:TextBox>
+            <asp:TextBox CssClass="boxes" ID="txtUsername" runat="server" TextMode="Email"></asp:TextBox>
         </div>
         <div id="password">
             <asp:Label CssClass="boxes" Width="20%" ID="lblPassword" runat="server" Text="Password:"></asp:Label>

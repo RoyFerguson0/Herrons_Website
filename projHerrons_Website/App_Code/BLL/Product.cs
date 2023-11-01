@@ -20,6 +20,21 @@ namespace projHerrons_Website.App_Code.BLL
 
         }
 
+        public void updateProduct()
+        {
+            DataAccess2.updateProduct(this.ProductID, this.ProductName, this.ProductDesc, this.ProductPrice, this.ProductImage, this.ProductCategory);
+        }
+
+        public bool deleteProduct()
+        {
+            return DataAccess2.removeProduct(this.ProductID);
+        }
+
+        public void createNewProduct()
+        {
+            this.ProductID = DataAccess2.createProduct(this.ProductName, this.ProductDesc, this.ProductPrice, this.ProductImage, this.ProductCategory);
+        }
+
         public void loadProduct(int ProductID)
         {
             Product tmpProductObj = DataAccess2.getProduct(ProductID);
