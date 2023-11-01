@@ -21,8 +21,6 @@ namespace projHerrons_Website
                 int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["cookieHits"]); // Instead of 0 in tables you could put 'count'
                 hits++;
 
-                ViewState["hitsCookie"] = hits;
-
                 ds.Tables[0].Rows[0]["cookieHits"] = hits.ToString();
                 ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
 
@@ -91,6 +89,16 @@ namespace projHerrons_Website
                 "&Category=" + Server.UrlEncode(Category));
 
 
+        }
+
+        protected void lbnKebabs_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Products.aspx?cat=Kebabs");
+        }
+
+        protected void lbnBurgers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Products.aspx?cat=Burgers");
         }
     }
 }

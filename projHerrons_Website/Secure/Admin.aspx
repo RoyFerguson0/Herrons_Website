@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Admin.aspx.cs" Inherits="projHerrons_Website.Admin" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
     <link href="../Styles/Admin.css" rel="stylesheet" />
+    
+    <style type="text/css">
+        .auto-style1 {
+            height: 20px;
+        }
+    </style>
+    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
@@ -43,7 +49,9 @@
                 </div>
                 <div>
                     <asp:Label ID="lblFileUploadCreate" runat="server" Text="Image: "></asp:Label>
-                    <asp:FileUpload ID="fuCreateProductImage" runat="server" /><br />
+                    <div class="fuChooseFile marginBottom">
+                        <asp:FileUpload ID="fuCreateProductImage" runat="server" /><br />
+                    </div>
                 </div>
                 <div>
                     <asp:Label ID="lblCreateCategory" runat="server" Text="Category: "></asp:Label>
@@ -96,6 +104,33 @@
             </div>
             
         </div>
+        <br />
+        <br />
+        <div id="tableHits">
+            <table>
+                <tr>
+                <th id="tbHeading" colspan="2">Web Page Hits Statistics</th>
+              </tr>
+              <tr>
+                <th>Web Pages</th>
+                <th>Number of Hits</th>
+              </tr>
+                <tr>
+                <td>User Visits</td>
+                <td><asp:Label ID="lblHitsUserVisits" runat="server" Text=""></asp:Label></td>
+              </tr>
+              <tr>
+                <td>Products Form</td>
+                <td><asp:Label ID="lblHitsProducts" runat="server" Text=""></asp:Label></td>
+              </tr>
+              <tr>
+                <td>Selected Products Form</td>
+                <td><asp:Label ID="lblHitsSelectedProducts" runat="server" Text=""></asp:Label></td>
+              </tr>
+            </table>
+        </div>
+    </div>
+        
         <br />
         <br />
         <br />

@@ -22,6 +22,10 @@
     <br />
     Categories: <asp:LinkButton ID="lbnChips" runat="server" OnClick="lbnChips_Click">Chips</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;
+    <asp:LinkButton ID="lbnKebabs" runat="server" OnClick="lbnKebabs_Click">Kebabs</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;
+    <asp:LinkButton ID="lbnBurgers" runat="server" OnClick="lbnBurgers_Click">Burgers</asp:LinkButton>
+&nbsp;&nbsp;&nbsp;
     <asp:LinkButton ID="lbnAllProducts" runat="server" OnClick="lbnAllProducts_Click">View All Products</asp:LinkButton>
     <br />
     <br />
@@ -51,11 +55,6 @@
         
     </asp:ListView>
 
-
-    <br />
-    <br />
-    <br />
-    <br />
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [tblProducts] WHERE [ProductID] = ?" InsertCommand="INSERT INTO [tblProducts] ([ProductID], [ProductName], [ProductDescription], [ProductPrice], [ProductImage], [ProductCategory]) VALUES (?, ?, ?, ?, ?, ?)" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tblProducts]" UpdateCommand="UPDATE [tblProducts] SET [ProductName] = ?, [ProductDescription] = ?, [ProductPrice] = ?, [ProductImage] = ?, [ProductCategory] = ? WHERE [ProductID] = ?">
         <DeleteParameters>
             <asp:Parameter Name="ProductID" Type="Int32" />
@@ -78,8 +77,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <br />
-    <br />
-    <br />
+    
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="System.Data.OleDb" SelectCommand="SELECT * FROM [tblProducts]"></asp:SqlDataSource>
     <br />
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [tblProducts] WHERE ([ProductCategory] = ?)">
@@ -87,10 +85,7 @@
             <asp:QueryStringParameter Name="ProductCategory" QueryStringField="cat" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <br />
-    <br />
-    <br />
-    <br />
+    
     
 
     

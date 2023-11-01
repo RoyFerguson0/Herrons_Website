@@ -24,6 +24,24 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.LinkButton lbnChips;
 
         /// <summary>
+        /// lbnKebabs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnKebabs;
+
+        /// <summary>
+        /// lbnBurgers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnBurgers;
+
+        /// <summary>
         /// lbnAllProducts control.
         /// </summary>
         /// <remarks>

@@ -1,5 +1,25 @@
 ﻿body {
 }
+#tableHits{
+    width:100%;
+    margin:auto;
+}
+table, td, th {
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+}
+
+table{
+    width:60%;
+    margin:auto;
+    border-collapse:collapse;
+}
+#tbHeading{
+    width:100%;
+    font-size:32px;
+    font-style:italic;
+}
 
 #hylAdmin {
     background-color: #ddd;
@@ -94,4 +114,72 @@
 #uploadImageBtn{
     margin:auto;
     text-align:center;
+}
+
+
+@media only screen and (max-width:700px) {
+
+    .marginBottom{
+        width:revert;
+        width:100%;
+    }
+
+    #ContentPlaceHolder1_txtUpdateStatus {
+        width: 100%;
+    }
+
+    #ContentPlaceHolder1_txtCreateProductCategory {
+        width: 100%;
+        margin-bottom:8px;
+    }
+
+    #ContentPlaceHolder1_txtUpdateProductCategory {
+        width: 100%;
+    }
+
+/*Create Product Image Uploader*/
+    #ContentPlaceHolder1_lblFileUploadCreate {
+        text-align:revert;
+        text-align: center;
+        width:revert;
+        width: 100%;
+    }
+
+    #ContentPlaceHolder1_fuCreateProductImage {
+        float: revert;
+        width:60%;
+        text-align: center;
+        margin: auto;
+    }
+
+
+/*Product Images Uploaded*/
+    #ContentPlaceHolder1_lblFileUploadMessage {
+        text-align:revert;
+        text-align: center;
+        width:revert;
+        width: 100%;
+    }
+
+    #ContentPlaceHolder1_fuUploadImages {
+        float:revert;
+        width:60%;
+        text-align: center;
+        margin: auto;
+    }
+
+/*Create Product Category Section*/
+    #ContentPlaceHolder1_lblCreateCategory {
+        float:revert;
+        
+    }
+
+
+    #ContentPlaceHolder1_btnUpdateProduct{
+        margin-bottom:8px;
+    }
+
+    #ContentPlaceHolder1_btnUpdateUser{
+        margin-bottom: 8px;
+    }
 }

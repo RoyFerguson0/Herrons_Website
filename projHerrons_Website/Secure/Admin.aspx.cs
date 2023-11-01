@@ -1,6 +1,7 @@
 ﻿using projHerrons_Website.App_Code.BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,7 +13,14 @@ namespace projHerrons_Website
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            lblHitsUserVisits.Text = Application["visits"].ToString();
+            DataSet ds = new DataSet();
+            ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));      
+
+            int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["cookieHits"]); 
+            int hits2 = Convert.ToInt32(ds.Tables[0].Rows[0]["firstHits"]);
+            lblHitsProducts.Text = hits.ToString();
+            lblHitsSelectedProducts.Text = hits2.ToString();
         }
 
         protected void btnUpdateUser_Click(object sender, EventArgs e)
