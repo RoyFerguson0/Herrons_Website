@@ -33,13 +33,13 @@
             <h2>Create Product</h2>
             <div id="detailsProductCreate">
                 <div>
-                Product Name: <asp:TextBox ID="txtCreateProductName" runat="server"></asp:TextBox><br />
+                Product Name: <asp:TextBox CssClass="marginBottom" ID="txtCreateProductName" runat="server"></asp:TextBox><br />
                 </div>
                 <div>
-                Product Description: <asp:TextBox ID="txtCreateProductDesc" runat="server"></asp:TextBox><br />
+                Product Description: <asp:TextBox CssClass="marginBottom" ID="txtCreateProductDesc" runat="server"></asp:TextBox><br />
                 </div>
                 <div>
-                Price: <asp:TextBox ID="txtCreateProductPrice" runat="server"></asp:TextBox><br />
+                Price: £<asp:TextBox CssClass="marginBottom" ID="txtCreateProductPrice" runat="server"></asp:TextBox><br />
                 </div>
                 <div>
                     <asp:Label ID="lblFileUploadCreate" runat="server" Text="Image: "></asp:Label>
@@ -49,7 +49,10 @@
                     <asp:Label ID="lblCreateCategory" runat="server" Text="Category: "></asp:Label>
                     <asp:TextBox ID="txtCreateProductCategory" runat="server"></asp:TextBox><br /><br />
                 </div>
-                <asp:Button ID="btnCreateProduct" runat="server" Text="Create Product" />
+                <div id="CreateMessageBox">
+                <asp:Label ID="lblCreateMessage" runat="server" Font-Bold="True" ForeColor="Red" Font-Size="Medium"></asp:Label>
+                </div>
+                <asp:Button ID="btnCreateProduct" runat="server" Text="Create Product" OnClick="btnCreateProduct_Click" />
                 
             </div>
         </div>
@@ -61,21 +64,37 @@
             <div id="findProduct">
                 
                 <asp:Label ID="lblUpdateProductID" runat="server" Text="Enter Product ID: "></asp:Label>
-                <asp:TextBox ID="txtUpdateProductID" runat="server" TextMode="Number"></asp:TextBox>
-                &nbsp;<asp:Button ID="btnFindProductID" runat="server" Text="Find" /><br /><br />
+                <asp:TextBox CssClass="marginBottom" ID="txtUpdateProductID" runat="server" TextMode="Number"></asp:TextBox>
+                &nbsp;<asp:Button ID="btnFindProductID" runat="server" Text="Find" OnClick="btnFindProductID_Click" /><br /><br />
             </div>
             <div id="foundNotProduct">
-                <asp:Label ID="lblProductFound" runat="server"></asp:Label>
+                <asp:Label ID="lblProductFound" runat="server" Font-Bold="True" ForeColor="Red" Font-Size="Medium"></asp:Label>
             </div>
             <div id="detailsProduct">
-                Product Name: <asp:TextBox ID="txtDeleteProductName" runat="server"></asp:TextBox><br />
-                Product Description: <asp:TextBox ID="txtDeleteProductDesc" runat="server"></asp:TextBox><br />
-                Price: <asp:TextBox ID="txtDeleteProductPrice" runat="server" TextMode="Email"></asp:TextBox><br />
-                Image: <asp:TextBox ID="txtDeleteProductImage" runat="server" TextMode="Password"></asp:TextBox><br />
-                Category: <asp:TextBox ID="txtDeleteProductCategory" runat="server"></asp:TextBox><br /><br />
-                <asp:Button ID="btnUpdateProduct" runat="server" Text="Update Product Information" />
-                &nbsp;<asp:Button ID="btnDeleteProduct" runat="server" Text="Delete Product" />
+                Product Name: <asp:TextBox CssClass="marginBottom" ID="txtUpdateProductName" runat="server"></asp:TextBox><br />
+                Product Description: <asp:TextBox CssClass="marginBottom" ID="txtUpdateProductDesc" runat="server"></asp:TextBox><br />
+                Price: £<asp:TextBox CssClass="marginBottom" ID="txtUpdateProductPrice" runat="server"></asp:TextBox><br />
+                Image: <asp:TextBox CssClass="marginBottom" ID="txtUpdateProductImage" runat="server"></asp:TextBox><br />
+                Category: <asp:TextBox ID="txtUpdateProductCategory" runat="server"></asp:TextBox><br /><br />
+                <asp:Button ID="btnUpdateProduct" runat="server" Text="Update Product Information" OnClick="btnUpdateProduct_Click" />
+                &nbsp;<asp:Button ID="btnDeleteProduct" runat="server" Text="Delete Product" OnClick="btnDeleteProduct_Click" />
             </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div id="fileUploadSection">
+            <h2>Product Images Uploader</h2>
+            <div id="fileUploadImages">
+                <div id="fileUpload">
+                    <asp:Label ID="lblFileUploadMessage" runat="server" Text="Select Image: "></asp:Label>
+                    <asp:FileUpload CssClass="marginBottom" ID="fuUploadImages" runat="server" /><br />
+                </div>
+                <div id="uploadImageBtn">
+                <asp:Button ID="btnUploadImage" runat="server" Text="Upload Image" OnClick="btnUploadImage_Click" />
+                </div>
+            </div>
+            
         </div>
         <br />
         <br />

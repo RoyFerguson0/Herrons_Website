@@ -98,5 +98,135 @@ namespace projHerrons_Website
                 lblUserFound.Text = "Enter ID!!!!";
             }
         }
+
+        protected void btnCreateProduct_Click(object sender, EventArgs e)
+        {
+            lblCreateMessage.Text = "";
+            Product obj = new Product();
+            try
+            {
+                obj.setProductName(txtCreateProductName.Text);
+                obj.setProductDescription(txtCreateProductDesc.Text);
+                obj.setProductPrice(Convert.ToDouble(txtCreateProductPrice.Text));
+                obj.setProductImage("~/ImagesProducts/" + fuCreateProductImage.FileName);
+                obj.setProductCategory(txtCreateProductCategory.Text);
+
+                if (obj.getProductName() != "" & obj.getProductDesc() != "" & obj.getProductPrice() != -1
+                   & obj.getProductImage() != "" & obj.getProductCategory() != "")
+                {
+
+                    obj.createNewProduct();
+                }
+                else
+                {
+                    lblCreateMessage.Text = "Fields not Filled in?";
+                }
+            }catch (Exception ex)
+            {
+                lblCreateMessage.Text = "Fill All Fields In?";
+            }
+
+
+        }
+
+        protected void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+            lblProductFound.Text = "";
+            if (txtUpdateProductID.Text != "")
+            {
+                Product obj = new Product();
+                String strID = txtUpdateProductID.Text;
+                obj.loadProduct(Convert.ToInt32(strID));
+                if (obj.getProductID() != 0)
+                {
+                    obj.setProductName(txtCreateProductName.Text);
+                    obj.setProductDescription(txtCreateProductDesc.Text);
+                    try
+                    {
+                        obj.setProductPrice(Convert.ToDouble(txtCreateProductPrice.Text));
+                    }catch (Exception ex)
+                    {
+
+                    }
+                    obj.setProductImage("~/Images/" + fuCreateProductImage.FileName);
+                    obj.setProductCategory(txtCreateProductCategory.Text);
+                    if (obj.getProductID() != 0 & obj.getProductName() != "" & obj.getProductDesc() != "" & obj.getProductPrice() != -1
+                        & obj.getProductImage() != "" & obj.getProductCategory() != "")
+                    {
+                        obj.updateProduct();
+                    }
+                    else
+                    {
+                        lblProductFound.Text = "Enter All Data in Fields???";
+                    }
+                }
+                else
+                {
+                    lblProductFound.Text = "Enter Valid ID";
+                }
+            }
+            else
+            {
+                lblProductFound.Text = "Enter ID!!!!";
+            }
+        }
+
+        protected void btnDeleteProduct_Click(object sender, EventArgs e)
+        {
+            lblProductFound.Text = "";
+            if (txtUpdateProductID.Text != "")
+            {
+                Product obj = new Product();
+                obj.loadProduct(Convert.ToInt32(txtUpdateProductID.Text));
+                if (obj.getProductID() != 0)
+                {
+                    txtUpdateProductID.Text = obj.deleteProduct().ToString();
+                }
+                else
+                {
+                    lblProductFound.Text = "Enter Valid ID";
+                }
+            }
+            else
+            {
+                lblProductFound.Text = "Enter ID!!!!!";
+            }
+        }
+
+        protected void btnFindProductID_Click(object sender, EventArgs e)
+        {
+            lblProductFound.Text = "";
+            if (txtUpdateProductID.Text != "")
+            {
+                Product obj = new Product();
+                obj.loadProduct(Convert.ToInt32(txtUpdateProductID.Text));
+                if (obj.getProductID() != 0)
+                {
+                    txtUpdateProductName.Text = obj.getProductName();
+                    txtUpdateProductDesc.Text = obj.getProductDesc();
+                    txtUpdateProductPrice.Text = obj.getProductPrice().ToString();
+                    txtUpdateProductImage.Text = obj.getProductImage();
+                    txtUpdateProductCategory.Text = obj.getProductCategory();
+                }
+                else
+                {
+                    lblProductFound.Text = "ID Doesn't Exist???";
+                }
+            }
+            else
+            {
+                lblProductFound.Text = "Enter ID!!!!";
+            }
+        }
+
+        protected void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            String uploadedImgPath = "";
+            if (fuUploadImages.HasFile)
+            {
+                uploadedImgPath = "~/ImagesProducts/" + fuUploadImages.FileName;
+                fuUploadImages.SaveAs(Server.MapPath(uploadedImgPath));
+            }
+        }
     }
 }

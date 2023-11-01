@@ -177,6 +177,15 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.TextBox txtCreateProductCategory;
 
         /// <summary>
+        /// lblCreateMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCreateMessage;
+
+        /// <summary>
         /// btnCreateProduct control.
         /// </summary>
         /// <remarks>
@@ -222,49 +231,49 @@ namespace projHerrons_Website
         protected global::System.Web.UI.WebControls.Label lblProductFound;
 
         /// <summary>
-        /// txtDeleteProductName control.
+        /// txtUpdateProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteProductName;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdateProductName;
 
         /// <summary>
-        /// txtDeleteProductDesc control.
+        /// txtUpdateProductDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteProductDesc;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdateProductDesc;
 
         /// <summary>
-        /// txtDeleteProductPrice control.
+        /// txtUpdateProductPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteProductPrice;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdateProductPrice;
 
         /// <summary>
-        /// txtDeleteProductImage control.
+        /// txtUpdateProductImage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteProductImage;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdateProductImage;
 
         /// <summary>
-        /// txtDeleteProductCategory control.
+        /// txtUpdateProductCategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDeleteProductCategory;
+        protected global::System.Web.UI.WebControls.TextBox txtUpdateProductCategory;
 
         /// <summary>
         /// btnUpdateProduct control.
@@ -283,5 +292,32 @@ namespace projHerrons_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDeleteProduct;
+
+        /// <summary>
+        /// lblFileUploadMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFileUploadMessage;
+
+        /// <summary>
+        /// fuUploadImages control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload fuUploadImages;
+
+        /// <summary>
+        /// btnUploadImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnUploadImage;
     }
 }

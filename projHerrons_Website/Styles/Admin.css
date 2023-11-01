@@ -28,11 +28,18 @@
     margin: auto;
     text-align: center;
 }
+
+#fileUploadSection {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
 #ContentPlaceHolder1_lblFileUploadCreate {
     float: left;
-    margin:auto;
-    text-align:right;
-    width:40%;
+    margin: auto;
+    text-align: right;
+    width: 40%;
 }
 
 #ContentPlaceHolder1_fuCreateProductImage {
@@ -64,4 +71,27 @@
 
 #foundNot{
     padding-bottom:8px;
+}
+
+#ContentPlaceHolder1_lblFileUploadMessage {
+    float: left;
+    margin: auto;
+    text-align: right;
+    width: 40%;
+}
+#ContentPlaceHolder1_fuUploadImages {
+    float: left;
+    text-align: center;
+    margin: auto;
+}
+
+#fileUpload {
+    width: 100%;
+    float: left;
+    padding-bottom: 8px;
+}
+
+#uploadImageBtn{
+    margin:auto;
+    text-align:center;
 }

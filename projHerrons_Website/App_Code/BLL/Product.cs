@@ -11,7 +11,7 @@ namespace projHerrons_Website.App_Code.BLL
         private int ProductID;
         private String ProductName;
         private String ProductDesc;
-        private Double ProductPrice;
+        private Double ProductPrice = -1;
         private String ProductImage;
         private String ProductCategory;
 
@@ -42,8 +42,8 @@ namespace projHerrons_Website.App_Code.BLL
             this.ProductName = tmpProductObj.getProductName();
             this.ProductDesc = tmpProductObj.getProductDesc();
             this.ProductPrice = tmpProductObj.getProductPrice();
-            this.ProductImage = tmpProductObj.getProductImage().ToString();
-            this.ProductCategory = tmpProductObj.getProductCategory().ToString();
+            this.ProductImage = tmpProductObj.getProductImage();
+            this.ProductCategory = tmpProductObj.getProductCategory();
         }
 
 

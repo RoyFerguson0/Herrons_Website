@@ -75,7 +75,7 @@ namespace projHerrons_Website.App_Code.DAL
 
             OleDbConnection conn = openConnection();  // Communicate with database
 
-            String sqlStr = "INSERT into tblProducts(ProductName, ProductDescription, ProductPrice, ProductImage, ProductCategory)" +     //What you are wanting to add 
+            String sqlStr = "INSERT into tblProducts([ProductName], [ProductDescription], [ProductPrice], [ProductImage], [ProductCategory])" +     //What you are wanting to add 
                 " VALUES('" + ProductName + "', '" + ProductDesc + "', '" + ProductPrice + "', '" + ProductImage + "', '" + ProductCategory + "')";
 
             OleDbCommand cmd = new OleDbCommand(sqlStr, conn);   // Needs to be the right way round
