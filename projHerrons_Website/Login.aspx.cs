@@ -18,10 +18,15 @@ namespace projHerrons_Website
                 txtUsername.Text = Request.Cookies["rememberMe"]["username"].ToString();
                 txtPassword.Text = Request.Cookies["rememberMe"]["password"].ToString();
             }
+            if(lblOutput.Text == "")
+            {
+                lblOutput.Visible = false;
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            lblOutput.Visible=false;
             String username = txtUsername.Text;
             String password = txtPassword.Text;
             Account accountObj = new Account(username, password);
@@ -29,6 +34,7 @@ namespace projHerrons_Website
 
             if (userNum != -1)
             {
+                
                 // Loading the Valid User to Get Status
                 Account AccOjb = new Account();
                 AccOjb.loadAccount(userNum);
@@ -49,6 +55,11 @@ namespace projHerrons_Website
                     Response.Cookies.Add(objCookie);
                 }
 
+            }
+            else
+            {
+                lblOutput.Visible = true;
+                lblOutput.Text = "Username or Password is wrong?";
             }
             
         }

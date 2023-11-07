@@ -24,5 +24,8 @@
         <div id="loginButton">
             <asp:Button  CssClass="boxes" ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
         </div>
+        <div id="errorMessage">
+            <asp:Label CssClass="boxes" ID="lblOutput" runat="server" Text=""></asp:Label>
+        </div>
     </div>
 </asp:Content>

@@ -27,7 +27,7 @@
                 </asp:DropDownList>
             </div>
             <div id="headFour" class="headings">
-                £<asp:Label ID="lblProductPrice" runat="server" Text="Label"></asp:Label>
+                £<asp:Label ID="lblProductPrice" runat="server"></asp:Label>
             </div>
             <div id="headFive" class="headings">
                 <asp:Button ID="btnPurchase" runat="server" Text="Purchase" OnClick="btnPurchase_Click" />

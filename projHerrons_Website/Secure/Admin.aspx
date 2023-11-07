@@ -96,11 +96,15 @@
             <div id="fileUploadImages">
                 <div id="fileUpload">
                     <asp:Label ID="lblFileUploadMessage" runat="server" Text="Select Image: "></asp:Label>
-                    <asp:FileUpload CssClass="marginBottom" ID="fuUploadImages" runat="server" /><br />
+                    <asp:FileUpload CssClass="marginBottom" ID="fuUploadImages" runat="server" />
+                </div>
+                <div id="imageFound">
+                <asp:Label ID="lblProductImageUploaded" runat="server" Font-Bold="True" ForeColor="Red" Font-Size="Medium"></asp:Label>
                 </div>
                 <div id="uploadImageBtn">
                 <asp:Button ID="btnUploadImage" runat="server" Text="Upload Image" OnClick="btnUploadImage_Click" />
                 </div>
+                
             </div>
             
         </div>

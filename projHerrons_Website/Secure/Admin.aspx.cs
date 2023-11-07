@@ -235,6 +235,10 @@ namespace projHerrons_Website
                 uploadedImgPath = "~/ImagesProducts/" + fuUploadImages.FileName;
                 fuUploadImages.SaveAs(Server.MapPath(uploadedImgPath));
             }
+            else
+            {
+                lblProductImageUploaded.Text = "Need to Select an Image?";
+            }
         }
     }
 }
