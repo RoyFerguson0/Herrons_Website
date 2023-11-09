@@ -42,10 +42,8 @@
                     <asp:Image id="imgProducts" CssClass="imgProducts" runat="server" ImageUrl='<%#Eval("ProductImage")%>'/>
                     
                     <p><%#Eval("ProductName")%></p>
-                
-                    <p><%#Eval("ProductPrice")%></p>
 
-                    <asp:Button ID="btnSelectedProduct" runat="server" Text="Button" CommandArgument='<%# Eval("ProductID")%>'/>
+                    <asp:Button ID="btnSelectedProduct" runat="server" Text="View" CommandArgument='<%# Eval("ProductID")%>'/>
                 </div>
             </ItemTemplate>
             <FooterTemplate>

@@ -41,7 +41,42 @@ namespace projHerrons_Website
                     if (obj.getUserID() != 0 & obj.getFirstName() != "" & obj.getLastName() != "" & obj.getEmail() != ""
                         & obj.getPassword() != "" & obj.getStatus() != "")
                     {
-                        obj.updateAccount();
+                        String fName = obj.getFirstName();
+                        String lName = obj.getLastName();
+                        bool isNumber = false;
+                        for(int i = 0; i < fName.Length; i++)
+                        {
+                            if (char.IsDigit(fName[i]))
+                            {
+                                isNumber = true;
+                                break;
+                            }
+                        }
+                        for (int i = 0; i < lName.Length; i++)
+                        {
+                            if (char.IsDigit(lName[i]))
+                            {
+                                isNumber = true;
+                                break;
+                            }
+                        }
+
+                        if (isNumber)
+                        {
+                            lblUserFound.Text = "There is a number is First Name or Last Name";
+                        }
+                        else
+                        {
+                            obj.updateAccount();
+                            txtUpdateID.Text = "";
+                            txtUpdateFName.Text = "";
+                            txtUpdateLName.Text = "";
+                            txtUpdateEmail.Text = "";
+                            txtUpdatePassword.Text = "";
+                            txtUpdateStatus.Text = "";
+                        }
+
+
                     }
                     else
                     {
