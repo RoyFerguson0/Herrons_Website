@@ -3,7 +3,7 @@
 
     <link href="Styles/SignUp.css" rel="stylesheet" />
 
-
+    <title>Sign Up</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
