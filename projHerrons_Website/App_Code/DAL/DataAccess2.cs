@@ -9,7 +9,7 @@ namespace projHerrons_Website.App_Code.DAL
 {
     public class DataAccess2
     {
-
+        // Opening Connection to Database
         public static OleDbConnection openConnection()  //openConnection is the object
         {
             string connStr = "Provider=Microsoft.ACE.OLEDB.12.0; data source=" +
@@ -31,6 +31,7 @@ namespace projHerrons_Website.App_Code.DAL
 
         }// Open Connection
 
+        // Closing Connection to Database
         public static void closeConnection(OleDbConnection cn)
         {
             cn.Close();
@@ -38,7 +39,7 @@ namespace projHerrons_Website.App_Code.DAL
 
 
        
-
+        // Getting a Single Product from Database
         public static Product getProduct(Double id)
         {
             Product obj = new Product();
@@ -69,6 +70,7 @@ namespace projHerrons_Website.App_Code.DAL
 
         } // getProduct
 
+        // Inserting Product Data into Database
         public static int createProduct(String ProductName, String ProductDesc, Double ProductPrice, String ProductImage, String ProductCategory)
         {
             //Need to know where the database is and what you are going to add to it
@@ -95,7 +97,7 @@ namespace projHerrons_Website.App_Code.DAL
 
         } //createProduct
 
-
+        // Updating a Products Information
         public static bool updateProduct(int ProductID, String ProductName, String ProductDesc, Double ProductPrice, String ProductImage, String ProductCategory)
         {
             OleDbConnection conn = openConnection();
@@ -120,6 +122,7 @@ namespace projHerrons_Website.App_Code.DAL
             }
         } // UpdateProduct
 
+        // Removing a Product from Database
         public static bool removeProduct(int id)
         {
 

@@ -81,5 +81,31 @@ namespace projHerrons_Website
             // show final cost
             this.lblTotalCost.Text = "<br><br>Total cost : £" + totalCost;
         }
+
+        protected void btnPurchase_Click(object sender, EventArgs e)
+        {
+            if (status == true)
+            {
+                if (status2 == true)
+                {
+                    ArrayList arrCart = new ArrayList();
+                    Session["CART"] = arrCart;
+
+                }
+            }
+            else
+            {                
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            // This one creates a new arrylist one above opens array and clears it
+            ArrayList arrCart = new ArrayList();
+            Session["CART"] = arrCart;
+
+            displayDetails();
+        }
     }
 }

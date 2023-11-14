@@ -45,11 +45,13 @@ namespace projHerrons_Website.App_Code.BLL
 
         }
 
+        // Default Constructor
         public Account()
         {
 
         }
 
+        // Parameterized Constructor
         public Account(String email, String password)
         {
             this.Email = email;

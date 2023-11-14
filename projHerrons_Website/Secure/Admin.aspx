@@ -111,25 +111,25 @@
         <br />
         <br />
         <div id="tableHits">
-            <table>
-                <tr>
-                <th id="tbHeading" colspan="2">Web Page Hits Statistics</th>
+            <table class="table">
+                <tr class="tr">
+                <th class="th" id="tbHeading" colspan="2">Web Page Hits Statistics</th>
               </tr>
-              <tr>
-                <th>Web Pages</th>
-                <th>Number of Hits</th>
+              <tr class="tr">
+                <th class="th">Web Pages</th>
+                <th class="th">Number of Hits</th>
               </tr>
-                <tr>
-                <td>User Visits</td>
-                <td><asp:Label ID="lblHitsUserVisits" runat="server" Text=""></asp:Label></td>
+                <tr class="tr">
+                <td class="td">User Visits</td>
+                <td class="td"><asp:Label ID="lblHitsUserVisits" runat="server" Text=""></asp:Label></td>
               </tr>
-              <tr>
-                <td>Products Form</td>
-                <td><asp:Label ID="lblHitsProducts" runat="server" Text=""></asp:Label></td>
+              <tr class="tr">
+                <td class="td">Products Form</td>
+                <td class="td"><asp:Label ID="lblHitsProducts" runat="server" Text=""></asp:Label></td>
               </tr>
-              <tr>
-                <td>Selected Products Form</td>
-                <td><asp:Label ID="lblHitsSelectedProducts" runat="server" Text=""></asp:Label></td>
+              <tr class="tr">
+                <td class="td">Selected Products Form</td>
+                <td class="td"><asp:Label ID="lblHitsSelectedProducts" runat="server" Text=""></asp:Label></td>
               </tr>
             </table>
         </div>

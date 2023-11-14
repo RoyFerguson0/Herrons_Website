@@ -12,6 +12,7 @@ namespace projHerrons_Website.App_Code.DAL
 {
     public class DataAccess
     {
+        // Opening Connection to Database
         public static OleDbConnection openConnection() //Open connection is the object
         {
             string connStr = "Provider=Microsoft.ACE.OLEDB.12.0; data source=" +
@@ -30,11 +31,13 @@ namespace projHerrons_Website.App_Code.DAL
 
         } //Open Connection
 
+        // Closing Connection to Database
         public static void closeConnection(OleDbConnection cn)
         {
             cn.Close();
         } // Close Connection
 
+        // Inserting Account Data into Database
         public static int createAccount(String Firstname, String Lastname, String Email, String Password, String Status)
         {
             OleDbConnection conn = openConnection(); // Communicate With Database
@@ -56,6 +59,7 @@ namespace projHerrons_Website.App_Code.DAL
         } // Create Account
 
         // Using the Pink Route
+        // Getting all Accounts
         public static DataSet getAllAccounts()
         {
             DataSet ds = new DataSet();
@@ -71,6 +75,7 @@ namespace projHerrons_Website.App_Code.DAL
             return ds;
         }
 
+        // Getting a Single Account From Database
         public static Account getAccount(int id)
         {
             Account obj = new Account();
@@ -100,6 +105,7 @@ namespace projHerrons_Website.App_Code.DAL
             return obj;
         } // getAccount
 
+        // Updating a User Information
         public static bool updateAccount(int UserID, String Firstname, String Lastname, String Email, String Password, String Status)
         {
             OleDbConnection conn = openConnection();
@@ -123,6 +129,7 @@ namespace projHerrons_Website.App_Code.DAL
             }
         }
 
+        // Remove an Account from Datbase
         public static bool removeAccount(int id)
         {
             OleDbConnection conn = openConnection();
@@ -144,7 +151,7 @@ namespace projHerrons_Website.App_Code.DAL
             }
         }
 
-
+        // Checking that the Username and Password are both valid in Databaes
         public static int validateLogin(string email, string pwd)
         {
             int userID = -1;

@@ -88,41 +88,47 @@ namespace projHerrons_Website
 
         protected void btnPurchase_Click(object sender, EventArgs e)
         {
-            CartItem Equipment = new CartItem();
-            Equipment.setProductID(Convert.ToInt32(Request.QueryString["id"]));
-            Equipment.setItemName(lblProductName.Text);
-            Equipment.setCost(Convert.ToDouble(lblProductPrice.Text));
-            Equipment.setProductSize(ddlSize.SelectedValue.ToString());
-            Equipment.setQuantity(1);
-
-            ArrayList arrCart = (ArrayList)Session["CART"];
-
-            bool productExists = false;
-            int storedItem = 0;
-            int QuantityOfProduct = 0;
-
-            for (int i = 0; i < arrCart.Count; i++)
+            try
             {
-                CartItem productStored = (CartItem)arrCart[i];
-                if ((productStored.getProductID().Equals(Equipment.getProductID())) & (productStored.getProductSize().Equals(Equipment.getProductSize())))
+                CartItem Equipment = new CartItem();
+                Equipment.setProductID(Convert.ToInt32(Request.QueryString["id"]));
+                Equipment.setItemName(lblProductName.Text);
+                Equipment.setCost(Convert.ToDouble(lblProductPrice.Text));
+                Equipment.setProductSize(ddlSize.SelectedValue.ToString());
+                Equipment.setQuantity(1);
+
+                ArrayList arrCart = (ArrayList)Session["CART"];
+
+                bool productExists = false;
+                int storedItem = 0;
+                int QuantityOfProduct = 0;
+
+                for (int i = 0; i < arrCart.Count; i++)
                 {
-                    productExists = true;
+                    CartItem productStored = (CartItem)arrCart[i];
+                    if ((productStored.getProductID().Equals(Equipment.getProductID())) & (productStored.getProductSize().Equals(Equipment.getProductSize())))
+                    {
+                        productExists = true;
 
-                    QuantityOfProduct = productStored.getQuantity();
+                        QuantityOfProduct = productStored.getQuantity();
 
-                    storedItem = i;
+                        storedItem = i;
+                    }
                 }
-            }
-            if (productExists)
+                if (productExists)
+                {
+                    Equipment.setQuantity(QuantityOfProduct += 1);
+
+                    arrCart.RemoveAt(storedItem);
+                }
+
+                arrCart.Add(Equipment);
+                Session.Add("CART", arrCart);
+                updateCartSummary();
+            }catch (Exception ex)
             {
-                Equipment.setQuantity(QuantityOfProduct += 1);
 
-                arrCart.RemoveAt(storedItem);
             }
-
-            arrCart.Add(Equipment);
-            Session.Add("CART", arrCart);
-            updateCartSummary();
         }
 
         private void updateCartSummary()

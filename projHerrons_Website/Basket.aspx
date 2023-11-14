@@ -16,10 +16,11 @@
             <asp:Label ID="lblTotalCost" runat="server"></asp:Label>
         </p>
         <p>
-            <asp:Button ID="btnClear" runat="server"  Text="Clear Basket" />
+            <asp:Button ID="btnClear" runat="server"  Text="Clear Basket" OnClick="btnClear_Click" OnClientClick="return areyousure()" />
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnPurchase" runat="server" Text="Purchase Items" />
+            <asp:Button ID="btnPurchase" runat="server" Text="Purchase Items" OnClick="btnPurchase_Click" OnClientClick="return areyousurePurchase()" />
             <br />
         </p>
     </div>
+    
 </asp:Content>
