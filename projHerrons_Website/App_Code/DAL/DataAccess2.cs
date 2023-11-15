@@ -110,7 +110,7 @@ namespace projHerrons_Website.App_Code.DAL
 
             int count = cmd.ExecuteNonQuery();
 
-            conn.Close();
+            closeConnection(conn);
 
             if (count == 1)
             {
@@ -133,7 +133,7 @@ namespace projHerrons_Website.App_Code.DAL
 
             int count = cmd.ExecuteNonQuery();
 
-            conn.Close();
+            closeConnection(conn);
 
             if (count == 1)
             {

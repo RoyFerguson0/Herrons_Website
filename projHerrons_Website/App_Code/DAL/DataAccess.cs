@@ -129,7 +129,7 @@ namespace projHerrons_Website.App_Code.DAL
             }
         }
 
-        // Remove an Account from Datbase
+        // Remove an Account from Database
         public static bool removeAccount(int id)
         {
             OleDbConnection conn = openConnection();
@@ -151,7 +151,7 @@ namespace projHerrons_Website.App_Code.DAL
             }
         }
 
-        // Checking that the Username and Password are both valid in Databaes
+        // Checking that the Username and Password are both valid in Database
         public static int validateLogin(string email, string pwd)
         {
             int userID = -1;
