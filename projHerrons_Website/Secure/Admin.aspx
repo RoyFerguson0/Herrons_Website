@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="content">
         <div id="updateUser">
-            <h2>Update User</h2>
+            <h2 class="Heading">Update User</h2>
             <div id="findUser">
                 
                 <asp:Label ID="lblUpdateID" runat="server" Text="Enter ID: "></asp:Label>
@@ -36,7 +36,7 @@
         <br />
         <br />
         <div id="createProduct">
-            <h2>Create Product</h2>
+            <h2 class="Heading">Create Product</h2>
             <div id="detailsProductCreate">
                 <div>
                 Product Name: <asp:TextBox CssClass="marginBottom" ID="txtCreateProductName" runat="server"></asp:TextBox><br />
@@ -68,7 +68,7 @@
         <br />
         <br />
         <div id="updateProduct">
-            <h2>Update Product</h2>
+            <h2 class="Heading">Update Product</h2>
             <div id="findProduct">
                 
                 <asp:Label ID="lblUpdateProductID" runat="server" Text="Enter Product ID: "></asp:Label>
@@ -92,7 +92,7 @@
         <br />
         <br />
         <div id="fileUploadSection">
-            <h2>Product Images Uploader</h2>
+            <h2 class="Heading">Product Images Uploader</h2>
             <div id="fileUploadImages">
                 <div id="fileUpload">
                     <asp:Label ID="lblFileUploadMessage" runat="server" Text="Select Image: "></asp:Label>

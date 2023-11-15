@@ -18,7 +18,7 @@
 
 <div id="HomeContent">
     
-    <h1>Products Available</h1>
+    <h1 id="productTitle">Products Available</h1>
     <br />
     Categories: <asp:LinkButton ID="lbnChips" runat="server" OnClick="lbnChips_Click">Chips</asp:LinkButton>
 &nbsp;&nbsp;&nbsp;

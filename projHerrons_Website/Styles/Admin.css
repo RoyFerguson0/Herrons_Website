@@ -35,6 +35,12 @@
     font-size:32px;
     font-style:italic;
 }
+.Heading {
+    width: 100%;
+    font-size: 32px;
+    font-style: italic;
+    font-weight:bold;
+}
 
 #hylAdmin {
     background-color: #ddd;

@@ -52,20 +52,31 @@ namespace projHerrons_Website
                         if (chkTerms.Checked)
                         {
                             Account objUser = new Account();
-                            objUser.setFirstName(txtFirstName.Text);
-                            objUser.setLastName(txtLastName.Text);
-                            objUser.setEmail(txtEmail.Text.ToString());
-                            objUser.setPassword(txtPassword.Text);
-                            objUser.setStatus("User");
-                            objUser.createNewAccount();
 
-                            lblOuput.Text = "Created Account" + objUser.getUserID();
-                            txtFirstName.Text = "";
-                            txtLastName.Text = "";
-                            txtEmail.Text = "";
-                            txtPassword.Text = "";
-                            txtPasswordRepeat.Text = "";
+                            int validEmail = objUser.validEmail(txtEmail.Text);
+
+                            System.Diagnostics.Debug.WriteLine("Number :::: " + validEmail);
+                            if (validEmail == -1)
+                            {
+                                objUser.setFirstName(txtFirstName.Text);
+                                objUser.setLastName(txtLastName.Text);
+                                objUser.setEmail(txtEmail.Text.ToString());
+                                objUser.setPassword(txtPassword.Text);
+                                objUser.setStatus("User");
+                                objUser.createNewAccount();
+
+                                lblOuput.Text = "Created Account" + objUser.getUserID();
+                                txtFirstName.Text = "";
+                                txtLastName.Text = "";
+                                txtEmail.Text = "";
+                                txtPassword.Text = "";
+                                txtPasswordRepeat.Text = "";
                         }
+                        else
+                        {
+                            lblOuput.Text = "Email Already Exists!!!!!!";
+                        }
+                    }
                         else
                         {
                             lblOuput.Text = "Check The Terms!!!";

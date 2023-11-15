@@ -10,7 +10,11 @@
     text-align:center;
 }
 
-#imgProducts{
+#productTitle{
+    font-weight:bold;
+}
+
+#imgProducts {
     width: 60%;
     height: 120px;
 }

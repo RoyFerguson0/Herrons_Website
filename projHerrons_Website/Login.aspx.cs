@@ -31,7 +31,6 @@ namespace projHerrons_Website
             String password = txtPassword.Text;
             Account accountObj = new Account(username, password);
             int userNum = accountObj.validateLogin();
-
             if (userNum != -1)
             {
                 

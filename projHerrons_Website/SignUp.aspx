@@ -18,7 +18,7 @@
                     <div class="card-body p-5">
                       <h2 id="changeFont" class="text-uppercase text-center mb-5">Create an account</h2>
 
-                      <form>
+
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example1cg">First Name</label>
@@ -63,8 +63,8 @@
 
                         <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="Login.aspx"
                             class="fw-bold text-body"><u>Login here</u></a></p>
-                          
-                      </form>
+                       
+
                         <div id="output">
                         <asp:Label ID="lblOuput" runat="server" Text=""></asp:Label>
                             </div>

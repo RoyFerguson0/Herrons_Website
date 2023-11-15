@@ -10,6 +10,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 <div id="HomeContent">
+    <div id="introduction">
+        <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+    </div>
     <div id="firstSlideShow">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -117,7 +120,7 @@
     </div>
 
 
-    <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+    
 
     
 </asp:Content>

@@ -23,7 +23,7 @@ namespace projHerrons_Website
                 }
                 else
                 {
-                    lblGreeting.Text = "Welcome ananymous";
+                    lblGreeting.Text = "Welcome";
                 }
             }
         }

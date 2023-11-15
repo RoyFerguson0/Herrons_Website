@@ -186,5 +186,43 @@ namespace projHerrons_Website.App_Code.DAL
 
 
 
+
+        // Checking the Email doesn't already exist in Database
+        public static int validEmail(String email)
+        {
+            int userID = -1;
+
+            try
+            {
+                OleDbConnection con = openConnection();
+                //string strSQL = "SELECT UserID FROM tblAccounts WHERE " +
+                //    "'[UserEmail] = '" + email + "', [UserPassword] = '" + pwd;
+
+                //"(((Email) ='" + email + "') AND ((tblAccount.Password) ='" + pwd + "'))";
+
+                string strSQL = "SELECT tblAccounts.UserID FROM tblAccounts WHERE " +
+                                    "(((tblAccounts.Email) ='" + email + "'))";
+
+                OleDbCommand cmd = new OleDbCommand(strSQL, con);
+
+                OleDbDataReader reader = cmd.ExecuteReader();
+
+                reader.Read();
+                userID = Convert.ToInt32(reader["UserID"]);
+                closeConnection(con);
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            System.Diagnostics.Debug.WriteLine("The user ID::::: " + userID);
+            return userID;
+
+        } // getAccount
+
+
+
     }
 }

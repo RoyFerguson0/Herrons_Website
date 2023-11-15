@@ -64,6 +64,12 @@ namespace projHerrons_Website.App_Code.BLL
             return id;
         }
 
+        public int validEmail(String Email)
+        {
+            int id = DataAccess.validEmail(Email);
+            return id;
+        }
+
         // Setters
 
         //ID
