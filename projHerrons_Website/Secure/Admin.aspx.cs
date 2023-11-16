@@ -2,7 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,75 +20,132 @@ namespace projHerrons_Website
             DataSet ds = new DataSet();
             ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));      
 
-            int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["cookieHits"]); 
-            int hits2 = Convert.ToInt32(ds.Tables[0].Rows[0]["firstHits"]);
+            int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["productHits"]); 
+            int hits2 = Convert.ToInt32(ds.Tables[0].Rows[0]["selectedProdHits"]);
             lblHitsProducts.Text = hits.ToString();
             lblHitsSelectedProducts.Text = hits2.ToString();
+
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Normalize the domain
+                email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+                                      RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+                // Examines the domain part of the email and normalizes it.
+                string DomainMapper(Match match)
+                {
+                    // Use IdnMapping class to convert Unicode domain names.
+                    var idn = new IdnMapping();
+
+                    // Pull out and process domain name (throws ArgumentException on invalid)
+                    string domainName = idn.GetAscii(match.Groups[2].Value);
+
+                    return match.Groups[1].Value + domainName;
+                }
+            }
+            catch (RegexMatchTimeoutException e)
+            {
+                return false;
+            }
+            catch (ArgumentException e)
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^[^@\s]+@[^@\s]+\.[^@\s]+$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
 
         protected void btnUpdateUser_Click(object sender, EventArgs e)
         {
+
+            
             lblUserFound.Text = "";
             if (txtUpdateID.Text != "")
             {
-                Account obj = new Account();
-                String strID = txtUpdateID.Text;
-                obj.loadAccount(Convert.ToInt32(strID));
-                if (obj.getUserID() != 0)
+                bool emailValid = IsValidEmail(txtUpdateEmail.Text);
+                if (emailValid)
                 {
-                    obj.setFirstName(txtUpdateFName.Text);
-                    obj.setLastName(txtUpdateLName.Text);
-                    obj.setEmail(txtUpdateEmail.Text);
-                    obj.setPassword(txtUpdatePassword.Text);
-                    obj.setStatus(txtUpdateStatus.Text);
-                    if (obj.getUserID() != 0 & obj.getFirstName() != "" & obj.getLastName() != "" & obj.getEmail() != ""
-                        & obj.getPassword() != "" & obj.getStatus() != "")
+                    
+                    Account obj = new Account();
+                    String strID = txtUpdateID.Text;
+                    obj.loadAccount(Convert.ToInt32(strID));
+                    if (obj.getUserID() != 0)
                     {
-                        String fName = obj.getFirstName();
-                        String lName = obj.getLastName();
-                        bool isNumber = false;
-                        for(int i = 0; i < fName.Length; i++)
+                        obj.setFirstName(txtUpdateFName.Text);
+                        obj.setLastName(txtUpdateLName.Text);
+                        obj.setEmail(txtUpdateEmail.Text);
+                        obj.setPassword(txtUpdatePassword.Text);
+                        obj.setStatus(txtUpdateStatus.Text);
+                        if (obj.getUserID() != 0 & obj.getFirstName() != "" & obj.getLastName() != "" & obj.getEmail() != ""
+                            & obj.getPassword() != "" & obj.getStatus() != "")
                         {
-                            if (char.IsDigit(fName[i]))
+                            String fName = obj.getFirstName();
+                            String lName = obj.getLastName();
+                            bool isNumber = false;
+                            for (int i = 0; i < fName.Length; i++)
                             {
-                                isNumber = true;
-                                break;
+                                if (char.IsDigit(fName[i]))
+                                {
+                                    isNumber = true;
+                                    break;
+                                }
                             }
-                        }
-                        for (int i = 0; i < lName.Length; i++)
-                        {
-                            if (char.IsDigit(lName[i]))
+                            for (int i = 0; i < lName.Length; i++)
                             {
-                                isNumber = true;
-                                break;
+                                if (char.IsDigit(lName[i]))
+                                {
+                                    isNumber = true;
+                                    break;
+                                }
                             }
-                        }
 
-                        if (isNumber)
-                        {
-                            lblUserFound.Text = "There is a number is First Name or Last Name";
+                            if (isNumber)
+                            {
+                                lblUserFound.Text = "There is a number is First Name or Last Name";
+                            }
+                            else
+                            {
+                                obj.updateAccount();
+                                lblUserFound.Text = "User Information Updated";
+                                txtUpdateID.Text = "";
+                                txtUpdateFName.Text = "";
+                                txtUpdateLName.Text = "";
+                                txtUpdateEmail.Text = "";
+                                txtUpdatePassword.Text = "";
+                                txtUpdateStatus.Text = "";
+                            }
+
+
                         }
                         else
                         {
-                            obj.updateAccount();
-                            txtUpdateID.Text = "";
-                            txtUpdateFName.Text = "";
-                            txtUpdateLName.Text = "";
-                            txtUpdateEmail.Text = "";
-                            txtUpdatePassword.Text = "";
-                            txtUpdateStatus.Text = "";
+                            lblUserFound.Text = "Enter All Data in Fields???";
                         }
-
-
                     }
                     else
                     {
-                        lblUserFound.Text = "Enter All Data in Fields???";
+                        lblUserFound.Text = "Enter Valid ID";
                     }
                 }
                 else
                 {
-                    lblUserFound.Text = "Enter Valid ID";
+                    lblUserFound.Text = "InValid Email";
                 }
             }
             else
@@ -104,6 +164,7 @@ namespace projHerrons_Website
                 if (obj.getUserID() != 0)
                 {
                     txtUpdateID.Text = obj.deleteAccount().ToString();
+                    lblUserFound.Text = "User Deleted";
                 }
                 else
                 {

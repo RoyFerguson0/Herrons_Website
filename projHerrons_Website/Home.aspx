@@ -9,9 +9,22 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div id="HomeContent">
+<div runat="server" id="HomeContent">
     <div id="introduction">
-        <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+        <div id="textSizeChange">
+            <asp:Label ID="lblGreeting" runat="server" Text="Label"></asp:Label>
+        </div>
+        <div>
+            Accessibility: 
+            <asp:DropDownList ID="ddlAccessibility" runat="server">
+                <asp:ListItem>Select</asp:ListItem>
+                <asp:ListItem>Standard</asp:ListItem>
+                <asp:ListItem Value="#99CFE8">Light Blue</asp:ListItem>
+                <asp:ListItem Value="#DB6F67">Light Red</asp:ListItem>
+                <asp:ListItem Value="#F6E75F">Light Yellow</asp:ListItem>
+            </asp:DropDownList>
+            <asp:Button ID="btnSaveColour" runat="server" Text="Save" OnClick="btnSaveColour_Click"/>
+        </div>
     </div>
     <div id="firstSlideShow">
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -106,7 +119,7 @@
         <div class="optionsBorderWhiteSpace">
             </div>
         <%-- Third Option --%>
-        <div class="optionsBorder">
+        <div class="optionsBorder marginbottom">
             <div>
                 <asp:Image class="OptionsImage" ID="imgBasket" runat="server" ImageUrl="~/Images/basket.jpg" />
             </div>

@@ -19,11 +19,11 @@ namespace projHerrons_Website
                 DataSet ds = new DataSet();
                 ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));     
 
-                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["firstHits"]);
+                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["selectedProdHits"]);
                 hits++;
                 // lblHits.Text = hits.ToString();
 
-                ds.Tables[0].Rows[0]["firstHits"] = hits.ToString();
+                ds.Tables[0].Rows[0]["selectedProdHits"] = hits.ToString();
                 ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
             }
 

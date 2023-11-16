@@ -15,6 +15,15 @@ namespace projHerrons_Website
     {
 
         /// <summary>
+        /// HomeContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HomeContent;
+
+        /// <summary>
         /// lblGreeting control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,24 @@ namespace projHerrons_Website
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblGreeting;
+
+        /// <summary>
+        /// ddlAccessibility control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlAccessibility;
+
+        /// <summary>
+        /// btnSaveColour control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSaveColour;
 
         /// <summary>
         /// imgProducts control.

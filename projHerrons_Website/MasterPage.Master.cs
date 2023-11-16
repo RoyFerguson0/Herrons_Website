@@ -38,6 +38,19 @@ namespace projHerrons_Website
             {
                 Session["loggedInStatus"] = "";
             }
+
+            if (Request.Cookies["accessCookie"] == null)
+            {
+                //lblName.Text = "No cookie exitsts";
+            }
+            else
+            {
+                // lblName.Text = "Welcome " + Request.Cookies["mycookie"]["name"].ToString();
+                //lblColour.Text = "Colour is: " + Request.Cookies["mycookie"]["colour"].ToString();
+
+                MasterContent.Style["background-color"] = Request.Cookies["accessCookie"]["colour"].ToString();
+            }
+
         }
     }
 }

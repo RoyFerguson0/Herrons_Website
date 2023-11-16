@@ -18,10 +18,10 @@ namespace projHerrons_Website
                 DataSet ds = new DataSet();
                 ds.ReadXml(Server.MapPath("/App_Data/NumberOfHits.xml"));      // "/"  if you have it in a folder
 
-                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["cookieHits"]); // Instead of 0 in tables you could put 'count'
+                int hits = Convert.ToInt32(ds.Tables[0].Rows[0]["productHits"]); // Instead of 0 in tables you could put 'count'
                 hits++;
 
-                ds.Tables[0].Rows[0]["cookieHits"] = hits.ToString();
+                ds.Tables[0].Rows[0]["productHits"] = hits.ToString();
                 ds.WriteXml(Server.MapPath("/App_Data/NumberOfHits.xml"));
 
                 if (!IsPostBack)
@@ -42,7 +42,60 @@ namespace projHerrons_Website
                     lvProducts.DataSource = SqlDataSource2;
                     lvProducts.DataBind();
                 }
+
             }
+
+            if (Request.Cookies["accessCookie"] == null)
+            {
+                //lblName.Text = "No cookie exitsts";
+            }
+            else
+            {
+                // lblName.Text = "Welcome " + Request.Cookies["mycookie"]["name"].ToString();
+                //lblColour.Text = "Colour is: " + Request.Cookies["mycookie"]["colour"].ToString();
+
+                colourChange.Style["background-color"] = Request.Cookies["accessCookie"]["colour"].ToString();
+            }
+
+
+
+            //if (Request.Cookies["accessCookie"].ToString() == null)
+            //{
+            //    HttpCookie objCookie = new HttpCookie("accessCookie");
+            //    objCookie["colour"] = "Select";
+
+            //    objCookie.Expires = DateTime.Now.Add(new TimeSpan(1, 0, 0, 0));
+
+            //    Response.Cookies.Add(objCookie);
+            //}
+            //else
+            //{
+
+
+            //    System.Diagnostics.Debug.WriteLine("first::: " + Request.Cookies["accessCookie"].ToString());
+            //    if (Request.Cookies["accessCookie"]["colour"] == null)
+            //    {
+
+            //    }
+            //    else if (Request.Cookies["accessCookie"]["colour"] == "Standard" || Request.Cookies["accessCookie"]["colour"] == "Select")
+            //    {
+            //        HttpCookie objCookie = new HttpCookie("accessCookie");
+
+            //        objCookie.Expires = DateTime.Now.AddDays(-1);
+
+            //        Response.Cookies.Add(objCookie);
+
+            //        System.Diagnostics.Debug.WriteLine("second::: " + Request.Cookies["accessCookie"]["colour"]);
+            //    }
+            //    else
+            //    {
+
+            //        colourChange.Style["background-color"] = Request.Cookies["accessCookie"]["colour"].ToString();
+
+            //        System.Diagnostics.Debug.WriteLine("third::: " + Request.Cookies["accessCookie"]["colour"]);
+            //    }
+            //}
+
         }
 
         

@@ -10,6 +10,7 @@
     <title>Admin</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div runat="server" id="colourChange">
     <div id="content">
         <div id="updateUser">
             <h2 class="Heading">Update User</h2>
@@ -25,7 +26,7 @@
             <div id="details">
                 First Name: <asp:TextBox CssClass="marginBottom" ID="txtUpdateFName" runat="server"></asp:TextBox><br />
                 Last Name: <asp:TextBox CssClass="marginBottom" ID="txtUpdateLName" runat="server"></asp:TextBox><br />
-                Email: <asp:TextBox CssClass="marginBottom" ID="txtUpdateEmail" runat="server" TextMode="Email"></asp:TextBox><br />
+                Email: <asp:TextBox CssClass="marginBottom" ID="txtUpdateEmail" runat="server" ></asp:TextBox><br />
                 Password: <asp:TextBox CssClass="marginBottom" ID="txtUpdatePassword" runat="server" TextMode="Password"></asp:TextBox><br />
                 Status: <asp:TextBox ID="txtUpdateStatus" runat="server"></asp:TextBox><br /><br />
                 <asp:Button ID="btnUpdateUser" runat="server" Text="Update Details" OnClick="btnUpdateUser_Click" />
@@ -134,7 +135,7 @@
             </table>
         </div>
     </div>
-        
+    </div> 
         <br />
         <br />
         <br />

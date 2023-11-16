@@ -67,6 +67,7 @@ namespace projHerrons_Website
                 sb.Append("Size : " + cartItem.getProductSize() + "<br>");
                 itemLabel.Text = sb.ToString();
 
+
                 totalQuantity += cartItem.getQuantity();
                 totalCost += cartItem.getCost() * cartItem.getQuantity();
 

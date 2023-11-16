@@ -15,7 +15,7 @@
     <title>Products</title>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <div runat="server" id="colourChange">
 <div id="HomeContent">
     
     <h1 id="productTitle">Products Available</h1>
@@ -88,5 +88,5 @@
 
     
     </div>
-
+    </div>
 </asp:Content>
