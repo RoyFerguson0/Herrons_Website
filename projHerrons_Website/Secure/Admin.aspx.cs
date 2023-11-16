@@ -220,6 +220,7 @@ namespace projHerrons_Website
                 {
 
                     obj.createNewProduct();
+                    lblCreateMessage.Text = "New Product Created";
                 }
                 else
                 {

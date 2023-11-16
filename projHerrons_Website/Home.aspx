@@ -41,24 +41,24 @@
           <div class="item active">
             <img class="foodImages" src="Images/foodOne.jpg" alt="Los Angeles">
             <div class="carousel-caption">
-              <h3>Los Angeles</h3>
-              <p>LA is always so much fun!</p>
+              <h3>Burger</h3>
+              <p>It's the way to go!</p>
             </div>
           </div>
 
           <div class="item">
             <img class="foodImages" src="Images/foodTwo.jpg" alt="Chicago">
             <div class="carousel-caption">
-              <h3>Chicago</h3>
-              <p>Thank you, Chicago!</p>
+              <h3>Kebabs</h3>
+              <p>Enjoy a Taste Kebab With Choice of Sause!</p>
             </div>
           </div>
     
           <div class="item">
             <img class="foodImages" src="Images/foodThree.jpg" alt="Food">
             <div class="carousel-caption">
-              <h3>New York</h3>
-              <p>We love the Big Apple!</p>
+              <h3>Meal</h3>
+              <p>Get a Meal Deal cause your the real deal!</p>
             </div>
           </div>
   
