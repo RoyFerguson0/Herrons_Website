@@ -121,14 +121,26 @@ namespace projHerrons_Website
                             }
                             else
                             {
-                                obj.updateAccount();
-                                lblUserFound.Text = "User Information Updated";
-                                txtUpdateID.Text = "";
-                                txtUpdateFName.Text = "";
-                                txtUpdateLName.Text = "";
-                                txtUpdateEmail.Text = "";
-                                txtUpdatePassword.Text = "";
-                                txtUpdateStatus.Text = "";
+
+                                Account objUser = new Account();
+
+                                int validEmail = objUser.validEmail(txtUpdateEmail.Text);
+
+                                if (validEmail == -1)
+                                {
+                                    obj.updateAccount();
+                                    lblUserFound.Text = "User Information Updated";
+                                    txtUpdateID.Text = "";
+                                    txtUpdateFName.Text = "";
+                                    txtUpdateLName.Text = "";
+                                    txtUpdateEmail.Text = "";
+                                    txtUpdatePassword.Text = "";
+                                    txtUpdateStatus.Text = "";
+                                    }
+                                else
+                                {
+                                    lblUserFound.Text = "Email Already Exists!!!!!!";
+                                }
                             }
 
 
@@ -165,6 +177,12 @@ namespace projHerrons_Website
                 {
                     txtUpdateID.Text = obj.deleteAccount().ToString();
                     lblUserFound.Text = "User Deleted";
+                    txtUpdateID.Text = "";
+                    txtUpdateFName.Text = "";
+                    txtUpdateLName.Text = "";
+                    txtUpdateEmail.Text = "";
+                    txtUpdatePassword.Text = "";
+                    txtUpdateStatus.Text = "";
                 }
                 else
                 {
@@ -221,6 +239,10 @@ namespace projHerrons_Website
 
                     obj.createNewProduct();
                     lblCreateMessage.Text = "New Product Created";
+                    txtCreateProductName.Text = "";
+                    txtCreateProductDesc.Text = "";
+                    txtCreateProductPrice.Text = "";
+                    txtCreateProductCategory.Text = "";
                 }
                 else
                 {
@@ -244,27 +266,53 @@ namespace projHerrons_Website
                 obj.loadProduct(Convert.ToInt32(strID));
                 if (obj.getProductID() != 0)
                 {
-                    obj.setProductName(txtCreateProductName.Text);
-                    obj.setProductDescription(txtCreateProductDesc.Text);
+                    
                     try
                     {
-                        obj.setProductPrice(Convert.ToDouble(txtCreateProductPrice.Text));
-                    }catch (Exception ex)
+                        if (txtUpdateProductImage.Text.Contains("~/ImagesProducts/"))
+                        {
+                            lblProductFound.Text = "Remove ~/ImagesProducts/ from Product Image";
+                            //obj.setProductImage("");
+                        }
+                        else
+                        {
+                            obj.setProductName(txtUpdateProductName.Text);
+                            obj.setProductDescription(txtUpdateProductDesc.Text);
+                            obj.setProductPrice(Convert.ToDouble(txtUpdateProductPrice.Text));
+                            obj.setProductImage("~/ImagesProducts/" + txtUpdateProductImage.Text);
+                            obj.setProductCategory(txtUpdateProductCategory.Text);
+
+
+
+                            //System.Diagnostics.Debug.WriteLine("ID " + obj.getProductID());
+                            //System.Diagnostics.Debug.WriteLine("Name " + obj.getProductName());
+                            //System.Diagnostics.Debug.WriteLine("Desc " + obj.getProductDesc());
+                            //System.Diagnostics.Debug.WriteLine("Price " + obj.getProductPrice());
+                            //System.Diagnostics.Debug.WriteLine("Image " + obj.getProductImage());
+                            //System.Diagnostics.Debug.WriteLine("Category " + obj.getProductCategory());
+
+                            if (obj.getProductID() != 0 & obj.getProductName() != "" & obj.getProductDesc() != "" & obj.getProductPrice() != -1
+                                & obj.getProductImage() != "" & obj.getProductCategory() != "")
+                            {
+                                obj.updateProduct();
+                                lblProductFound.Text = "Product Information Updated";
+                                txtUpdateProductID.Text = "";
+                                txtUpdateProductName.Text = "";
+                                txtUpdateProductDesc.Text = "";
+                                txtUpdateProductPrice.Text = "";
+                                txtUpdateProductCategory.Text = "";
+                                txtUpdateProductImage.Text = "";
+                            }
+                            else
+                            {
+                                lblProductFound.Text = "Enter All Data in Fields???";
+                            }
+                        }
+                }catch (Exception ex)
                     {
 
-                    }
-                    obj.setProductImage("~/Images/" + fuCreateProductImage.FileName);
-                    obj.setProductCategory(txtCreateProductCategory.Text);
-                    if (obj.getProductID() != 0 & obj.getProductName() != "" & obj.getProductDesc() != "" & obj.getProductPrice() != -1
-                        & obj.getProductImage() != "" & obj.getProductCategory() != "")
-                    {
-                        obj.updateProduct();
-                    }
-                    else
-                    {
-                        lblProductFound.Text = "Enter All Data in Fields???";
-                    }
                 }
+            }
                 else
                 {
                     lblProductFound.Text = "Enter Valid ID";
@@ -286,6 +334,13 @@ namespace projHerrons_Website
                 if (obj.getProductID() != 0)
                 {
                     txtUpdateProductID.Text = obj.deleteProduct().ToString();
+                    lblProductFound.Text = "Product Deleted";
+                    txtUpdateProductID.Text = "";
+                    txtUpdateProductName.Text = "";
+                    txtUpdateProductDesc.Text = "";
+                    txtUpdateProductPrice.Text = "";
+                    txtUpdateProductCategory.Text = "";
+                    txtUpdateProductImage.Text = "";
                 }
                 else
                 {
@@ -331,6 +386,7 @@ namespace projHerrons_Website
             {
                 uploadedImgPath = "~/ImagesProducts/" + fuUploadImages.FileName;
                 fuUploadImages.SaveAs(Server.MapPath(uploadedImgPath));
+                lblProductImageUploaded.Text = "Product Image Uploaded?";
             }
             else
             {

@@ -60,7 +60,6 @@ namespace projHerrons_Website
 
                                 int validEmail = objUser.validEmail(txtEmail.Text);
 
-                                System.Diagnostics.Debug.WriteLine("Number :::: " + validEmail);
                                 if (validEmail == -1)
                                 {
                                     objUser.setFirstName(txtFirstName.Text);
