@@ -21,7 +21,7 @@ namespace projHerrons_Website
         protected void btnSignUp_Click(object sender, EventArgs e)
         {
             
-            if (txtFirstName.Text != "" || txtLastName.Text != "" || txtEmail.Text != "" || txtPassword.Text != "" || txtPasswordRepeat.Text != "")
+            if (txtFirstName.Text != "" & txtLastName.Text != "" & txtEmail.Text != "" & txtPassword.Text != "" & txtPasswordRepeat.Text != "")
             {
                 String fName = txtFirstName.Text;
                 String lName = txtLastName.Text;
